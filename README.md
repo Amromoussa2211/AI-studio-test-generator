@@ -1,61 +1,91 @@
-# Simple Playwright Testing Framework
+# 🤖 AI Studio Test Generator
 
-A comprehensive, easy-to-understand Playwright testing suite for web, mobile, and API testing. This framework provides everything you need to get started with automated testing quickly and efficiently.
+A comprehensive Playwright testing framework with **AI-powered test generation** from plain text user stories. Write tests faster, smarter, and more efficiently.
 
-## 🚀 Features
+## ⚡ Quick Navigation
 
-- **Web Testing**: Complete web application testing with page object models
-- **Mobile Testing**: Device emulation for iPhone, Android, and tablets
-- **API Testing**: Full CRUD operations with authentication
-- **Page Object Models**: Reusable, maintainable page object patterns
-- **Test Utilities**: Screenshot capture, data management, assertions
-- **Test Fixtures**: Easy setup and teardown with data management
-- **Comprehensive Examples**: Ready-to-use test examples
+| I want to... | Go to... |
+|--------------|----------|
+| 🚀 **Get started quickly** | [Installation](#-installation) → [Run Tests](#-how-to-run) |
+| 🤖 **Generate tests with AI** | [AI Generator Quick Guide](docs/QUICK-AI-GENERATOR.md) |
+| 📊 **Use data-driven testing** | [Data-Driven Guide](docs/DATA-DRIVEN-GUIDE.md) |
+| 📁 **Understand project structure** | [Project Structure](docs/PROJECT-STRUCTURE.md) |
+| 🐛 **Fix problems** | [Troubleshooting](docs/troubleshooting.md) |
+| 📚 **Learn best practices** | [Best Practices](docs/best-practices.md) |
+
+## 🌟 Key Features
+
+- 🤖 **AI Test Generation**: Convert user stories to executable tests instantly
+- 🌐 **Web Testing**: Complete browser automation with page object models
+- 📱 **Mobile Testing**: Device emulation for iPhone, Android, tablets
+- 🔌 **API Testing**: Full REST API testing with authentication
+- 📊 **Data-Driven**: Run tests with multiple data sets from CSV/JSON
+- 📈 **Rich Reports**: HTML reports with screenshots and videos
+- 🎯 **Page Object Pattern**: Maintainable, reusable test code
 
 ## 📁 Project Structure
 
 ```
-simple-testing-framework/
+AI-studio-test-generator/
+├── README.md                     # You are here!
+├── docs/                         # 📚 All documentation
+│   ├── PROJECT-STRUCTURE.md     # Complete structure guide
+│   ├── QUICK-AI-GENERATOR.md    # AI generator quick start
+│   ├── AI-GENERATOR-GUIDE.md    # Complete AI guide with examples
+│   ├── DATA-DRIVEN-GUIDE.md     # Data-driven testing guide
+│   └── troubleshooting.md       # Common issues & solutions
 ├── src/
-│   ├── page-objects/          # Page Object Models
-│   │   ├── BasePage.ts        # Base page with common functionality
-│   │   ├── LoginPage.ts       # Login functionality
-│   │   ├── FormPage.ts        # Form handling
-│   │   ├── NavigationPage.ts  # Menu and navigation
-│   │   └── EcommercePage.ts   # Shopping cart & e-commerce
-│   ├── tests/                 # Test suites
-│   │   ├── web/              # Web application tests
-│   │   │   ├── login.spec.ts
-│   │   │   ├── forms.spec.ts
-│   │   │   ├── navigation.spec.ts
-│   │   │   └── ecommerce.spec.ts
-│   │   ├── mobile/           # Mobile testing
-│   │   │   └── mobile.spec.ts
-│   │   └── api/              # API testing
-│   │       └── api.spec.ts
-│   ├── utils/                # Test utilities
-│   │   └── TestUtils.ts      # Screenshot, data, assertions
-│   ├── fixtures/             # Test fixtures
-│   │   └── testFixtures.ts   # Setup/teardown & data management
-│   ├── test-data/            # Test data and mocks
-│   │   └── testData.json     # Sample data
-│   └── config/               # Configuration files
-├── playwright.config.ts      # Playwright configuration
-├── package.json              # Dependencies
-└── tsconfig.json            # TypeScript configuration
+│   ├── cli/                     # 🤖 AI test generator CLI
+│   ├── core/                    # Core framework
+│   │   ├── page-objects/        # Page Object Models
+│   │   ├── fixtures/            # Test fixtures
+│   │   └── utils/               # Utilities
+│   ├── data-driven/             # 📊 Data-driven testing module
+│   │   ├── providers/           # CSV/JSON/Database providers
+│   │   ├── generators/          # Test data generators
+│   │   └── examples/            # Working examples
+│   ├── tests/                   # ✅ All test files
+│   │   ├── web/                 # Web tests
+│   │   ├── api/                 # API tests
+│   │   ├── mobile/              # Mobile tests
+│   │   └── generated/           # AI-generated tests
+│   └── reporting/               # Analytics & AI logic
+├── test-data/                   # Test data files (JSON/CSV)
+└── test-results/                # Generated reports (gitignored)
 ```
+
+**📖 For detailed structure explanation:** [docs/PROJECT-STRUCTURE.md](docs/PROJECT-STRUCTURE.md)
 
 ## 🛠️ Installation
 
-1. **Clone or copy the framework files**
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Amromoussa2211/AI-studio-test-generator.git
+   cd AI-studio-test-generator
+   ```
+
 2. **Install dependencies:**
    ```bash
    npm install
    ```
+
 3. **Install Playwright browsers:**
    ```bash
-   npm run install:browsers
+   npx playwright install
    ```
+
+## 📚 Complete Documentation
+
+All guides are in the [`docs/`](docs/) folder:
+
+| Documentation | Description |
+|---------------|-------------|
+| [**PROJECT-STRUCTURE.md**](docs/PROJECT-STRUCTURE.md) | Complete guide to project organization |
+| [**QUICK-AI-GENERATOR.md**](docs/QUICK-AI-GENERATOR.md) | Quick start: Generate tests with AI |
+| [**AI-GENERATOR-GUIDE.md**](docs/AI-GENERATOR-GUIDE.md) | Complete AI generator guide with examples |
+| [**DATA-DRIVEN-GUIDE.md**](docs/DATA-DRIVEN-GUIDE.md) | Data-driven testing with CSV/JSON |
+| [**best-practices.md**](docs/best-practices.md) | Testing best practices |
+| [**troubleshooting.md**](docs/troubleshooting.md) | Common issues & solutions |
 
 ## 🚀 How to Run
 
