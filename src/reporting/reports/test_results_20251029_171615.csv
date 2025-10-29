@@ -1,0 +1,51 @@
+id,name,suite,category,status,duration,timestamp,message,error_details,tags,priority,browser,os,test_type
+TEST_001,test_email_notification,Payment,performance,SKIPPED,0.55,2025-10-28T15:16:15.406465,Test failed with assertion error,,['regression'],high,chrome,linux,functional
+TEST_002,test_user_login,User Management,ui,PASSED,12.25,2025-10-29T04:16:15.406502,Test completed successfully,,['regression'],high,safari,macos,functional
+TEST_003,test_user_permissions,Payment,security,PASSED,5.38,2025-10-27T21:16:15.406517,Test completed successfully,,['smoke'],medium,firefox,windows,ui
+TEST_004,test_database_connectivity,User Management,performance,PASSED,8.24,2025-10-29T06:16:15.406528,Test completed successfully,,['critical'],high,chrome,linux,api
+TEST_005,test_user_login,Search,api,FAILED,17.36,2025-10-27T03:16:15.406538,Test failed with assertion error,Connection timeout,['optional'],high,chrome,macos,functional
+TEST_006,test_user_registration,Search,ui,PASSED,0.83,2025-10-28T03:16:15.406549,Test completed successfully,,['optional'],low,safari,linux,ui
+TEST_007,test_payment_processing,API Integration,functional,PASSED,12.58,2025-10-28T16:16:15.406557,Test completed successfully,,['regression'],low,chrome,macos,functional
+TEST_008,test_search_functionality,Authentication,security,PASSED,7.4,2025-10-27T04:16:15.406565,Test completed successfully,,['smoke'],low,firefox,linux,functional
+TEST_009,test_user_permissions,Search,security,PASSED,5.91,2025-10-28T23:16:15.406572,Test completed successfully,,['optional'],high,firefox,windows,functional
+TEST_010,test_error_handling,API Integration,performance,PASSED,10.37,2025-10-28T10:16:15.406580,Test completed successfully,,['optional'],medium,firefox,windows,ui
+TEST_011,test_user_registration,Authentication,security,FAILED,13.12,2025-10-28T03:16:15.406588,Test failed with assertion error,Connection timeout,['smoke'],low,safari,windows,functional
+TEST_012,test_search_functionality,Authentication,ui,PASSED,8.16,2025-10-26T17:16:15.406602,Test completed successfully,,['regression'],high,safari,linux,api
+TEST_013,test_user_login,Payment,api,FAILED,24.91,2025-10-28T15:16:15.406610,Test failed with assertion error,Connection timeout,['optional'],high,chrome,macos,functional
+TEST_014,test_user_registration,Payment,integration,PASSED,12.17,2025-10-29T09:16:15.406619,Test completed successfully,,['smoke'],medium,firefox,windows,ui
+TEST_015,test_password_reset,Search,security,FAILED,24.46,2025-10-29T06:16:15.406627,Test failed with assertion error,,['regression'],medium,safari,macos,api
+TEST_016,test_payment_processing,Search,ui,PASSED,2.23,2025-10-29T11:16:15.406635,Test completed successfully,,['optional'],medium,chrome,linux,ui
+TEST_017,test_data_validation,Payment,api,PASSED,10.06,2025-10-29T07:16:15.406642,Test completed successfully,,['optional'],high,chrome,linux,api
+TEST_018,test_api_endpoint,API Integration,performance,PASSED,0.58,2025-10-26T21:16:15.406650,Test completed successfully,,['smoke'],high,firefox,macos,functional
+TEST_019,test_email_notification,User Management,functional,PASSED,14.8,2025-10-28T00:16:15.406658,Test completed successfully,,['critical'],medium,safari,linux,functional
+TEST_020,test_data_encryption,User Management,functional,PASSED,5.25,2025-10-27T11:16:15.406665,Test completed successfully,,['critical'],low,chrome,macos,functional
+TEST_021,test_data_validation,Payment,api,PASSED,6.22,2025-10-26T17:16:15.406672,Test completed successfully,,['regression'],high,chrome,windows,functional
+TEST_022,test_payment_processing,Search,security,PASSED,0.87,2025-10-28T23:16:15.406681,Test completed successfully,,['optional'],low,safari,macos,api
+TEST_023,test_error_handling,Payment,security,PASSED,9.25,2025-10-27T06:16:15.406688,Test completed successfully,,['regression'],medium,chrome,macos,api
+TEST_024,test_database_connectivity,User Management,performance,PASSED,1.06,2025-10-27T10:16:15.406695,Test completed successfully,,['regression'],low,firefox,windows,api
+TEST_025,test_user_registration,User Management,functional,PASSED,5.77,2025-10-28T07:16:15.406702,Test completed successfully,,['critical'],high,firefox,macos,ui
+TEST_026,test_data_validation,Search,ui,PASSED,7.6,2025-10-27T06:16:15.406710,Test completed successfully,,['optional'],medium,safari,linux,functional
+TEST_027,test_ui_responsiveness,Authentication,integration,PASSED,6.66,2025-10-28T21:16:15.406717,Test completed successfully,,['critical'],medium,chrome,linux,functional
+TEST_028,test_user_permissions,Payment,performance,PASSED,4.32,2025-10-29T10:16:15.406725,Test completed successfully,,['critical'],high,firefox,linux,ui
+TEST_029,test_email_notification,Payment,ui,PASSED,11.54,2025-10-27T18:16:15.406732,Test completed successfully,,['critical'],low,safari,linux,ui
+TEST_030,test_user_permissions,Search,ui,PASSED,12.94,2025-10-27T17:16:15.406740,Test completed successfully,,['regression'],medium,chrome,windows,ui
+TEST_031,test_data_validation,API Integration,integration,PASSED,1.47,2025-10-28T23:16:15.406747,Test completed successfully,,['regression'],medium,firefox,macos,functional
+TEST_032,test_user_permissions,Payment,ui,PASSED,3.48,2025-10-27T09:16:15.406755,Test completed successfully,,['optional'],high,firefox,windows,ui
+TEST_033,test_password_reset,User Management,api,FAILED,6.47,2025-10-27T21:16:15.406762,Test failed with assertion error,Connection timeout,['critical'],low,firefox,linux,ui
+TEST_034,test_error_handling,Payment,functional,PASSED,13.83,2025-10-28T06:16:15.406770,Test completed successfully,,['regression'],medium,safari,linux,ui
+TEST_035,test_user_registration,Search,performance,PASSED,12.82,2025-10-28T13:16:15.406777,Test completed successfully,,['critical'],low,chrome,windows,api
+TEST_036,test_search_functionality,Payment,performance,PASSED,4.21,2025-10-28T04:16:15.406785,Test completed successfully,,['optional'],medium,safari,windows,api
+TEST_037,test_data_validation,API Integration,api,PASSED,1.38,2025-10-28T04:16:15.406793,Test completed successfully,,['critical'],high,chrome,windows,ui
+TEST_038,test_user_permissions,Authentication,functional,PASSED,12.36,2025-10-28T22:16:15.406800,Test completed successfully,,['critical'],low,chrome,macos,functional
+TEST_039,test_api_endpoint,Payment,performance,FAILED,22.58,2025-10-28T10:16:15.406808,Test failed with assertion error,Connection timeout,['optional'],low,firefox,linux,functional
+TEST_040,test_error_handling,Payment,security,SKIPPED,0.11,2025-10-27T13:16:15.406816,Test failed with assertion error,,['optional'],medium,firefox,macos,ui
+TEST_041,test_data_validation,Payment,api,PASSED,6.08,2025-10-28T22:16:15.406824,Test completed successfully,,['regression'],low,chrome,windows,api
+TEST_042,test_api_endpoint,User Management,api,PASSED,13.16,2025-10-29T00:16:15.406833,Test completed successfully,,['smoke'],medium,safari,windows,functional
+TEST_043,test_ui_responsiveness,Payment,performance,PASSED,1.23,2025-10-28T14:16:15.406841,Test completed successfully,,['smoke'],medium,safari,linux,functional
+TEST_044,test_ui_responsiveness,Search,integration,SKIPPED,3.42,2025-10-28T18:16:15.406850,Test failed with assertion error,,['critical'],low,safari,macos,functional
+TEST_045,test_error_handling,Authentication,performance,PASSED,11.91,2025-10-26T17:16:15.406858,Test completed successfully,,['regression'],medium,firefox,macos,ui
+TEST_046,test_database_connectivity,Payment,ui,PASSED,6.22,2025-10-29T04:16:15.406866,Test completed successfully,,['critical'],medium,chrome,macos,functional
+TEST_047,test_database_connectivity,User Management,functional,PASSED,2.42,2025-10-27T17:16:15.406874,Test completed successfully,,['smoke'],medium,safari,windows,ui
+TEST_048,test_user_login,API Integration,ui,PASSED,4.58,2025-10-27T15:16:15.406881,Test completed successfully,,['optional'],low,safari,linux,functional
+TEST_049,test_data_encryption,API Integration,api,PASSED,6.68,2025-10-28T21:16:15.406888,Test completed successfully,,['regression'],medium,chrome,windows,api
+TEST_050,test_data_validation,User Management,ui,PASSED,7.11,2025-10-28T00:16:15.406895,Test completed successfully,,['critical'],high,safari,windows,functional

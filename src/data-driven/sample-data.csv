@@ -1,0 +1,26 @@
+test_case_id,test_name,priority,status,assigned_to,estimated_hours,actual_hours
+TC001,User Login,High,Passed,QA Team,4,3.5
+TC002,User Registration,High,Passed,QA Team,6,6.5
+TC003,Password Reset,Medium,Passed,QA Team,3,2.5
+TC004,Email Verification,Medium,Passed,QA Team,4,4.0
+TC005,Profile Update,Low,Passed,QA Team,2,2.0
+TC006,Two Factor Authentication,High,Failed,QA Team,8,7.0
+TC007,Social Login,Medium,Passed,QA Team,5,5.5
+TC008,Account Deletion,High,Passed,QA Team,4,3.0
+TC009,Session Management,Medium,Passed,QA Team,6,6.0
+TC010,Role Based Access,High,Passed,QA Team,7,8.0
+TC011,Shopping Cart,High,Passed,QA Team,5,4.5
+TC012,Product Search,Medium,Passed,QA Team,4,3.5
+TC013,Product Filters,Low,Passed,QA Team,3,3.0
+TC014,Product Reviews,Medium,Passed,QA Team,4,4.0
+TC015,Checkout Process,High,Passed,QA Team,8,8.5
+TC016,Payment Processing,High,Passed,QA Team,6,6.0
+TC017,Order History,Medium,Passed,QA Team,3,2.5
+TC018,Order Tracking,Medium,Passed,QA Team,4,4.5
+TC019,Returns and Refunds,High,Passed,QA Team,5,5.0
+TC020,Wishlist,Low,Passed,QA Team,3,3.5
+TC021,Mobile Responsive Design,High,Passed,Mobile QA,10,9.0
+TC022,Push Notifications,Medium,Passed,Mobile QA,6,5.5
+TC023,Offline Mode,High,Failed,Mobile QA,8,7.0
+TC024,App Performance,Medium,Passed,Mobile QA,5,5.0
+TC025,Device Compatibility,High,Passed,Mobile QA,12,13.0

@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Test Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            color: #666;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .passed { color: #28a745; }
+        .failed { color: #dc3545; }
+        .skipped { color: #ffc107; }
+        .total { color: #007bff; }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .chart-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .test-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .test-table th {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .test-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .test-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .test-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .test-status.passed {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .test-status.failed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .test-status.skipped {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-icon {
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            transition: width 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .metrics {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .test-table {
+                font-size: 0.9em;
+            }
+            
+            .test-table th,
+            .test-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Sample Test Report</h1>
+            <p>Automated test execution report</p>
+            <p>Generated on: 2025-10-29 17:14:28</p>
+        </div>
+        
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="metric-value total">3</div>
+                <div class="metric-label">Total Tests</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value passed">2</div>
+                <div class="metric-label">Passed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.66666666666666%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value failed">1</div>
+                <div class="metric-label">Failed</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value skipped">0</div>
+                <div class="metric-label">Skipped</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value passed">66.7%</div>
+                <div class="metric-label">Pass Rate</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value total">9.50s</div>
+                <div class="metric-label">Total Duration</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="chart-container">
+                <h3 class="chart-title">📊 Test Results Overview</h3>
+                <div style="text-align: center; padding: 20px;">
+                    <canvas id="resultsChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+            
+            <h3 style="margin-bottom: 20px; color: #333;">📋 Test Results Details</h3>
+            <div style="overflow-x: auto;">
+                <table class="test-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Test Name</th>
+                            <th>Test Suite</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Duration</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr class="test-row">
+                <td class="test-number">1</td>
+                <td class="test-name">test_user_login</td>
+                <td class="test-suite">Authentication</td>
+                <td class="test-category">functional</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">2.50s</td>
+                <td class="test-timestamp">2025-10-29T17:14:28.564693</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">2</td>
+                <td class="test-name">test_payment_processing</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">integration</td>
+                <td class="test-status failed">
+                    <span class="status-icon">❌</span>
+                    FAILED
+                </td>
+                <td class="test-duration">5.20s</td>
+                <td class="test-timestamp">2025-10-29T17:14:28.564706</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">3</td>
+                <td class="test-name">test_ui_responsiveness</td>
+                <td class="test-suite">UI</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">1.80s</td>
+                <td class="test-timestamp">2025-10-29T17:14:28.564708</td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Simple Testing Framework - Reporting Module</p>
+            <p>Report ID: 20251029_171428</p>
+        </div>
+    </div>
+    
+    <script>
+        // Simple chart visualization
+        const canvas = document.getElementById('resultsChart');
+        const ctx = canvas.getContext('2d');
+        
+        const passed = 2;
+        const failed = 1;
+        const skipped = 0;
+        
+        // Draw simple bar chart
+        ctx.fillStyle = '#28a745';
+        ctx.fillRect(50, 150 - passed * 2, 50, passed * 2);
+        ctx.fillStyle = '#dc3545';
+        ctx.fillRect(150, 150 - failed * 2, 50, failed * 2);
+        ctx.fillStyle = '#ffc107';
+        ctx.fillRect(250, 150 - skipped * 2, 50, skipped * 2);
+        
+        // Labels
+        ctx.fillStyle = '#333';
+        ctx.font = '12px Arial';
+        ctx.fillText('Passed', 55, 170);
+        ctx.fillText('Failed', 155, 170);
+        ctx.fillText('Skipped', 245, 170);
+        
+        // Values
+        ctx.font = 'bold 14px Arial';
+        ctx.fillText(passed.toString(), 70, 145 - passed * 2);
+        ctx.fillText(failed.toString(), 170, 145 - failed * 2);
+        ctx.fillText(skipped.toString(), 270, 145 - skipped * 2);
+    </script>
+</body>
+</html>
+        

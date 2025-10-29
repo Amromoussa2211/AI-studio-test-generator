@@ -1,0 +1,347 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "johndoe",
+      "email": "john.doe@example.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "age": 30,
+      "role": "admin",
+      "active": true
+    },
+    {
+      "id": 2,
+      "username": "janesmith",
+      "email": "jane.smith@example.com",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "age": 25,
+      "role": "user",
+      "active": true
+    },
+    {
+      "id": 3,
+      "username": "bobjohnson",
+      "email": "bob.johnson@example.com",
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "age": 35,
+      "role": "user",
+      "active": false
+    },
+    {
+      "id": 4,
+      "username": "alicebrown",
+      "email": "alice.brown@example.com",
+      "firstName": "Alice",
+      "lastName": "Brown",
+      "age": 28,
+      "role": "moderator",
+      "active": true
+    },
+    {
+      "id": 5,
+      "username": "charliewilson",
+      "email": "charlie.wilson@example.com",
+      "firstName": "Charlie",
+      "lastName": "Wilson",
+      "age": 42,
+      "role": "user",
+      "active": true
+    }
+  ],
+  "loginTests": [
+    {
+      "username": "johndoe",
+      "password": "correctpassword",
+      "expectedResult": "success",
+      "description": "Valid credentials"
+    },
+    {
+      "username": "johndoe",
+      "password": "wrongpassword",
+      "expectedResult": "failure",
+      "description": "Invalid password"
+    },
+    {
+      "username": "nonexistent",
+      "password": "anypassword",
+      "expectedResult": "failure",
+      "description": "Non-existent user"
+    },
+    {
+      "username": "",
+      "password": "",
+      "expectedResult": "validation_error",
+      "description": "Empty credentials"
+    },
+    {
+      "username": "bobjohnson",
+      "password": "correctpassword",
+      "expectedResult": "failure",
+      "description": "Inactive user"
+    }
+  ],
+  "products": [
+    {
+      "id": "PROD001",
+      "name": "Wireless Bluetooth Headphones",
+      "category": "Electronics",
+      "price": 99.99,
+      "inStock": true,
+      "stockQuantity": 50,
+      "rating": 4.5
+    },
+    {
+      "id": "PROD002",
+      "name": "Smart Watch Pro",
+      "category": "Electronics",
+      "price": 299.99,
+      "inStock": true,
+      "stockQuantity": 25,
+      "rating": 4.8
+    },
+    {
+      "id": "PROD003",
+      "name": "Mechanical Gaming Keyboard",
+      "category": "Electronics",
+      "price": 159.99,
+      "inStock": false,
+      "stockQuantity": 0,
+      "rating": 4.3
+    },
+    {
+      "id": "PROD004",
+      "name": "Ergonomic Office Chair",
+      "category": "Furniture",
+      "price": 449.99,
+      "inStock": true,
+      "stockQuantity": 15,
+      "rating": 4.6
+    },
+    {
+      "id": "PROD005",
+      "name": "LED Desk Lamp",
+      "category": "Furniture",
+      "price": 79.99,
+      "inStock": true,
+      "stockQuantity": 100,
+      "rating": 4.2
+    }
+  ],
+  "orders": [
+    {
+      "orderId": "ORD001",
+      "customerId": 1,
+      "items": [
+        {
+          "productId": "PROD001",
+          "quantity": 1,
+          "price": 99.99
+        },
+        {
+          "productId": "PROD005",
+          "quantity": 2,
+          "price": 79.99
+        }
+      ],
+      "total": 259.97,
+      "status": "completed",
+      "shippingAddress": {
+        "street": "123 Main Street",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10001"
+      }
+    },
+    {
+      "orderId": "ORD002",
+      "customerId": 2,
+      "items": [
+        {
+          "productId": "PROD002",
+          "quantity": 1,
+          "price": 299.99
+        }
+      ],
+      "total": 299.99,
+      "status": "processing",
+      "shippingAddress": {
+        "street": "456 Oak Avenue",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zipCode": "90210"
+      }
+    },
+    {
+      "orderId": "ORD003",
+      "customerId": 4,
+      "items": [
+        {
+          "productId": "PROD004",
+          "quantity": 1,
+          "price": 449.99
+        }
+      ],
+      "total": 449.99,
+      "status": "pending",
+      "shippingAddress": {
+        "street": "789 Pine Road",
+        "city": "Chicago",
+        "state": "IL",
+        "zipCode": "60601"
+      }
+    }
+  ],
+  "apiEndpoints": [
+    {
+      "name": "User Authentication",
+      "endpoint": "/api/auth/login",
+      "method": "POST",
+      "testCases": [
+        {
+          "description": "Valid login",
+          "payload": {
+            "username": "johndoe",
+            "password": "correctpassword"
+          },
+          "expectedStatus": 200,
+          "expectedResponse": {
+            "success": true,
+            "token": "*"
+          }
+        },
+        {
+          "description": "Invalid credentials",
+          "payload": {
+            "username": "johndoe",
+            "password": "wrongpassword"
+          },
+          "expectedStatus": 401,
+          "expectedResponse": {
+            "success": false,
+            "error": "Invalid credentials"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Product Search",
+      "endpoint": "/api/products/search",
+      "method": "GET",
+      "testCases": [
+        {
+          "description": "Search by category",
+          "queryParams": {
+            "category": "Electronics"
+          },
+          "expectedStatus": 200,
+          "expectedMinResults": 3
+        },
+        {
+          "description": "Search with price range",
+          "queryParams": {
+            "minPrice": 50,
+            "maxPrice": 200
+          },
+          "expectedStatus": 200,
+          "expectedMinResults": 1
+        }
+      ]
+    }
+  ],
+  "mobileTests": [
+    {
+      "deviceType": "iPhone",
+      "deviceName": "iPhone 12",
+      "testScenario": "User Login",
+      "testData": {
+        "username": "testuser",
+        "password": "testpass123"
+      },
+      "expectedResult": "success"
+    },
+    {
+      "deviceType": "Android",
+      "deviceName": "Samsung Galaxy S21",
+      "testScenario": "Product Search",
+      "testData": {
+        "searchQuery": "headphones",
+        "category": "Electronics"
+      },
+      "expectedResult": "results_found"
+    },
+    {
+      "deviceType": "iPad",
+      "deviceName": "iPad Pro",
+      "testScenario": "Shopping Cart",
+      "testData": {
+        "action": "add_item",
+        "productId": "PROD001",
+        "quantity": 1
+      },
+      "expectedResult": "item_added"
+    }
+  ],
+  "validationTests": [
+    {
+      "name": "Valid User Registration",
+      "data": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@example.com",
+        "password": "SecurePass123",
+        "age": 30,
+        "phone": "+1-555-123-4567"
+      },
+      "expectedValid": true
+    },
+    {
+      "name": "Invalid Email",
+      "data": {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "email": "invalid-email",
+        "password": "password123",
+        "age": 25,
+        "phone": "555-1234"
+      },
+      "expectedValid": false
+    },
+    {
+      "name": "Missing Required Fields",
+      "data": {
+        "firstName": "Bob",
+        "lastName": "Johnson"
+      },
+      "expectedValid": false
+    },
+    {
+      "name": "Invalid Age",
+      "data": {
+        "firstName": "Alice",
+        "lastName": "Brown",
+        "email": "alice@example.com",
+        "password": "password123",
+        "age": 150,
+        "phone": "+1-555-987-6543"
+      },
+      "expectedValid": false
+    },
+    {
+      "name": "Valid Business User",
+      "data": {
+        "firstName": "Charlie",
+        "lastName": "Wilson",
+        "email": "charlie.wilson@company.com",
+        "password": "BusinessPass456",
+        "age": 35,
+        "phone": "+1-555-456-7890",
+        "companyName": "Tech Solutions Inc",
+        "taxId": "123-45-6789"
+      },
+      "expectedValid": true
+    }
+  ]
+}

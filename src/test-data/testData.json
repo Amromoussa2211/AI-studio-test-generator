@@ -1,0 +1,484 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@example.com",
+      "password": "admin123",
+      "firstName": "Admin",
+      "lastName": "User",
+      "role": "admin",
+      "isActive": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "lastLogin": "2024-10-29T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "email": "user@example.com",
+      "password": "user123",
+      "firstName": "Regular",
+      "lastName": "User",
+      "role": "user",
+      "isActive": true,
+      "createdAt": "2024-01-15T00:00:00Z",
+      "lastLogin": "2024-10-28T15:30:00Z"
+    },
+    {
+      "id": 3,
+      "email": "test@example.com",
+      "password": "test123",
+      "firstName": "Test",
+      "lastName": "User",
+      "role": "user",
+      "isActive": true,
+      "createdAt": "2024-02-01T00:00:00Z",
+      "lastLogin": "2024-10-27T09:15:00Z"
+    },
+    {
+      "id": 4,
+      "email": "inactive@example.com",
+      "password": "inactive123",
+      "firstName": "Inactive",
+      "lastName": "User",
+      "role": "user",
+      "isActive": false,
+      "createdAt": "2024-01-10T00:00:00Z",
+      "lastLogin": "2024-09-15T00:00:00Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 15 Pro",
+      "price": 999.99,
+      "originalPrice": 1099.99,
+      "category": "Electronics",
+      "subcategory": "Smartphones",
+      "description": "Latest iPhone with advanced features",
+      "image": "/images/iphone-15-pro.jpg",
+      "inStock": true,
+      "stockCount": 25,
+      "rating": 4.8,
+      "reviewCount": 342,
+      "tags": ["smartphone", "apple", "premium"],
+      "specifications": {
+        "display": "6.1-inch Super Retina XDR",
+        "processor": "A17 Pro chip",
+        "storage": "128GB",
+        "camera": "48MP Main Camera"
+      }
+    },
+    {
+      "id": 2,
+      "name": "MacBook Air M2",
+      "price": 1199.99,
+      "originalPrice": 1299.99,
+      "category": "Electronics",
+      "subcategory": "Laptops",
+      "description": "Ultra-thin laptop with M2 chip",
+      "image": "/images/macbook-air-m2.jpg",
+      "inStock": true,
+      "stockCount": 15,
+      "rating": 4.9,
+      "reviewCount": 156,
+      "tags": ["laptop", "apple", "ultrabook"],
+      "specifications": {
+        "display": "13.6-inch Liquid Retina",
+        "processor": "Apple M2 chip",
+        "memory": "8GB unified memory",
+        "storage": "256GB SSD"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Sony WH-1000XM5 Headphones",
+      "price": 349.99,
+      "originalPrice": 399.99,
+      "category": "Electronics",
+      "subcategory": "Audio",
+      "description": "Industry-leading noise canceling headphones",
+      "image": "/images/sony-wh1000xm5.jpg",
+      "inStock": true,
+      "stockCount": 42,
+      "rating": 4.7,
+      "reviewCount": 789,
+      "tags": ["headphones", "noise-canceling", "wireless"],
+      "specifications": {
+        "type": "Over-ear",
+        "connectivity": "Bluetooth 5.2",
+        "battery": "30 hours",
+        "weight": "250g"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Nike Air Max 270",
+      "price": 149.99,
+      "originalPrice": 179.99,
+      "category": "Fashion",
+      "subcategory": "Shoes",
+      "description": "Comfortable everyday running shoes",
+      "image": "/images/nike-air-max-270.jpg",
+      "inStock": true,
+      "stockCount": 67,
+      "rating": 4.6,
+      "reviewCount": 234,
+      "tags": ["shoes", "nike", "running"],
+      "specifications": {
+        "material": "Mesh and synthetic",
+        "sole": "Rubber",
+        "color": "Black/White",
+        "sizes": ["6", "7", "8", "9", "10", "11", "12"]
+      }
+    },
+    {
+      "id": 5,
+      "name": "The Pragmatic Programmer",
+      "price": 34.99,
+      "originalPrice": 44.99,
+      "category": "Books",
+      "subcategory": "Programming",
+      "description": "Essential book for software developers",
+      "image": "/images/pragmatic-programmer.jpg",
+      "inStock": true,
+      "stockCount": 89,
+      "rating": 4.9,
+      "reviewCount": 567,
+      "tags": ["book", "programming", "software"],
+      "specifications": {
+        "author": "Andrew Hunt, David Thomas",
+        "pages": 352,
+        "publisher": "Addison-Wesley",
+        "language": "English"
+      }
+    },
+    {
+      "id": 6,
+      "name": "KitchenAid Stand Mixer",
+      "price": 299.99,
+      "originalPrice": 379.99,
+      "category": "Home & Kitchen",
+      "subcategory": "Appliances",
+      "description": "Professional stand mixer for baking",
+      "image": "/images/kitchenaid-mixer.jpg",
+      "inStock": false,
+      "stockCount": 0,
+      "rating": 4.8,
+      "reviewCount": 123,
+      "tags": ["kitchen", "mixer", "baking"],
+      "specifications": {
+        "capacity": "5 quarts",
+        "power": "575 watts",
+        "color": "Red",
+        "warranty": "1 year"
+      }
+    }
+  ],
+  "forms": {
+    "contact": {
+      "valid": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "subject": "Test Subject",
+        "message": "This is a test message for contact form testing.",
+        "phone": "+1-555-0123"
+      },
+      "invalid": {
+        "name": "",
+        "email": "invalid-email",
+        "subject": "",
+        "message": "",
+        "phone": "invalid-phone"
+      }
+    },
+    "registration": {
+      "valid": {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "email": "jane.smith@example.com",
+        "password": "SecurePass123!",
+        "confirmPassword": "SecurePass123!",
+        "phone": "+1-555-0124",
+        "address": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zipCode": "90210",
+        "country": "United States",
+        "terms": true,
+        "newsletter": true
+      },
+      "invalid": {
+        "firstName": "",
+        "lastName": "",
+        "email": "invalid-email",
+        "password": "weak",
+        "confirmPassword": "different",
+        "phone": "",
+        "address": "",
+        "city": "",
+        "state": "",
+        "zipCode": "",
+        "country": "",
+        "terms": false,
+        "newsletter": false
+      }
+    },
+    "login": {
+      "valid": {
+        "email": "user@example.com",
+        "password": "user123",
+        "rememberMe": false
+      },
+      "invalid": {
+        "email": "invalid@example.com",
+        "password": "wrongpassword",
+        "rememberMe": false
+      },
+      "empty": {
+        "email": "",
+        "password": "",
+        "rememberMe": false
+      }
+    },
+    "payment": {
+      "valid": {
+        "cardNumber": "4111111111111111",
+        "expiryMonth": "12",
+        "expiryYear": "2025",
+        "cvv": "123",
+        "cardholderName": "John Doe",
+        "billingAddress": "123 Main St",
+        "billingCity": "Anytown",
+        "billingState": "CA",
+        "billingZipCode": "90210",
+        "billingCountry": "US"
+      },
+      "declined": {
+        "cardNumber": "4000000000000002",
+        "expiryMonth": "12",
+        "expiryYear": "2025",
+        "cvv": "123",
+        "cardholderName": "Test User"
+      }
+    }
+  },
+  "addresses": {
+    "shipping": {
+      "valid": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "company": "Test Company",
+        "address1": "123 Main Street",
+        "address2": "Apt 4B",
+        "city": "San Francisco",
+        "state": "CA",
+        "zipCode": "94102",
+        "country": "United States",
+        "phone": "+1-555-0123"
+      }
+    },
+    "billing": {
+      "valid": {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "company": "Jane's Company",
+        "address1": "456 Oak Avenue",
+        "address2": "Suite 200",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zipCode": "90210",
+        "country": "United States",
+        "phone": "+1-555-0124"
+      }
+    }
+  },
+  "search": {
+    "queries": {
+      "electronics": "electronics",
+      "books": "programming",
+      "shoes": "Nike",
+      "invalid": "xyz123nonexistentproduct",
+      "special": "iPhone 15",
+      "partial": "MacBook"
+    },
+    "filters": {
+      "price": {
+        "min": 50,
+        "max": 500
+      },
+      "category": [
+        "Electronics",
+        "Books",
+        "Fashion",
+        "Home & Kitchen"
+      ],
+      "brand": [
+        "Apple",
+        "Nike",
+        "Sony",
+        "KitchenAid"
+      ],
+      "rating": {
+        "min": 4.0
+      }
+    }
+  },
+  "navigation": {
+    "menuItems": [
+      "Home",
+      "Products",
+      "Categories",
+      "About",
+      "Contact",
+      "Blog"
+    ],
+    "footerLinks": [
+      "Privacy Policy",
+      "Terms of Service",
+      "Shipping Info",
+      "Returns",
+      "FAQ",
+      "Support"
+    ],
+    "breadcrumbs": [
+      "Home",
+      "Products",
+      "Electronics"
+    ]
+  },
+  "api": {
+    "baseUrl": "https://jsonplaceholder.typicode.com",
+    "endpoints": {
+      "posts": "/posts",
+      "users": "/users",
+      "comments": "/comments",
+      "albums": "/albums",
+      "photos": "/photos",
+      "todos": "/todos"
+    },
+    "mockResponses": {
+      "user": {
+        "id": 1,
+        "name": "Leanne Graham",
+        "username": "Bret",
+        "email": "Sincere@april.biz",
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org",
+        "company": {
+          "name": "Romaguera-Crona",
+          "catchPhrase": "Multi-layered client-server neural-net",
+          "bs": "harness real-time e-markets"
+        },
+        "address": {
+          "street": "Kulas Light",
+          "suite": "Apt. 556",
+          "city": "Gwenborough",
+          "zipcode": "92998-3874",
+          "geo": {
+            "lat": "-37.3159",
+            "lng": "81.1496"
+          }
+        }
+      },
+      "post": {
+        "userId": 1,
+        "id": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+      },
+      "product": {
+        "id": 1,
+        "name": "Test Product",
+        "price": 29.99,
+        "description": "Test product description",
+        "category": "Test Category",
+        "inStock": true,
+        "rating": 4.5,
+        "image": "test-image.jpg"
+      }
+    },
+    "errorResponses": {
+      "404": {
+        "status": 404,
+        "message": "Not Found"
+      },
+      "401": {
+        "status": 401,
+        "message": "Unauthorized"
+      },
+      "500": {
+        "status": 500,
+        "message": "Internal Server Error"
+      },
+      "validation": {
+        "status": 422,
+        "errors": {
+          "email": ["Email is required"],
+          "password": ["Password is too short"]
+        }
+      }
+    },
+    "headers": {
+      "default": {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      "auth": {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": "Bearer token123"
+      }
+    }
+  },
+  "mobile": {
+    "devices": [
+      {
+        "name": "iPhone 12",
+        "viewport": { "width": 375, "height": 812 },
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)"
+      },
+      {
+        "name": "Samsung Galaxy S21",
+        "viewport": { "width": 360, "height": 800 },
+        "userAgent": "Mozilla/5.0 (Linux; Android 11; SM-G991B)"
+      },
+      {
+        "name": "iPad",
+        "viewport": { "width": 768, "height": 1024 },
+        "userAgent": "Mozilla/5.0 (iPad; CPU OS 14_0 like Mac OS X)"
+      }
+    ],
+    "gestures": {
+      "tap": { "x": 100, "y": 100 },
+      "swipe": { "from": { "x": 100, "y": 300 }, "to": { "x": 100, "y": 100 } },
+      "pinch": { "center": { "x": 200, "y": 400 }, "scale": 0.5 },
+      "longPress": { "x": 100, "y": 200, "duration": 1000 }
+    }
+  },
+  "performance": {
+    "thresholds": {
+      "pageLoadTime": 3000,
+      "apiResponseTime": 5000,
+      "clickResponseTime": 500,
+      "formSubmitTime": 3000
+    },
+    "breakpoints": {
+      "mobile": { "width": 768, "height": 1024 },
+      "tablet": { "width": 1024, "height": 768 },
+      "desktop": { "width": 1920, "height": 1080 }
+    }
+  },
+  "accessibility": {
+    "ariaLabels": {
+      "search": "Search products",
+      "cart": "Shopping cart",
+      "menu": "Main navigation menu",
+      "close": "Close dialog"
+    },
+    "roles": {
+      "button": "button",
+      "link": "link",
+      "dialog": "dialog",
+      "navigation": "navigation"
+    }
+  }
+}

@@ -1,0 +1,3913 @@
+{
+  "stories_processed": 5,
+  "total_tests_generated": 49,
+  "generation_timestamp": "2025-10-29T17:16:15.431592",
+  "story_results": [
+    {
+      "user_story": "As a customer, I want to login to my account so that I can access my personalized dashboard",
+      "parsed_story": {
+        "persona": "customer",
+        "action": "login to my account so that I can access my personalized dashboard",
+        "benefit": "login to my account so that I can access my personalized dashboard",
+        "detected_actions": [
+          "login"
+        ],
+        "keywords": [
+          "as",
+          "a",
+          "customer",
+          "i",
+          "want",
+          "to",
+          "login",
+          "to",
+          "my",
+          "account",
+          "so",
+          "that",
+          "i",
+          "can",
+          "access",
+          "my",
+          "personalized",
+          "dashboard"
+        ]
+      },
+      "generated_tests": [
+        {
+          "id": "FUNC_001",
+          "name": "Positive: Valid Credentials",
+          "description": "Verify that login works correctly when valid credentials",
+          "type": "functional",
+          "priority": "high",
+          "category": "positive",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to login page",
+            "Perform login with valid data",
+            "Submit the form/request",
+            "Verify successful completion",
+            "Validate expected results"
+          ],
+          "expected_result": "Login succeeds with valid credentials",
+          "estimated_duration": 2,
+          "tags": [
+            "login",
+            "functional",
+            "positive"
+          ]
+        },
+        {
+          "id": "FUNC_002",
+          "name": "Positive: Remember Me Enabled",
+          "description": "Verify that login works correctly when remember me enabled",
+          "type": "functional",
+          "priority": "high",
+          "category": "positive",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to login page",
+            "Perform login with valid data",
+            "Submit the form/request",
+            "Verify successful completion",
+            "Validate expected results"
+          ],
+          "expected_result": "Login succeeds with remember me enabled",
+          "estimated_duration": 2,
+          "tags": [
+            "login",
+            "functional",
+            "positive"
+          ]
+        },
+        {
+          "id": "FUNC_003",
+          "name": "Negative: Invalid Username",
+          "description": "Verify proper error handling when invalid username",
+          "type": "functional",
+          "priority": "medium",
+          "category": "negative",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to login page",
+            "Attempt login with invalid username",
+            "Submit the form/request",
+            "Verify appropriate error handling",
+            "Ensure no system corruption"
+          ],
+          "expected_result": "Appropriate error message displayed for invalid username",
+          "estimated_duration": 3,
+          "tags": [
+            "login",
+            "functional",
+            "negative",
+            "error-handling"
+          ]
+        },
+        {
+          "id": "FUNC_004",
+          "name": "Negative: Wrong Password",
+          "description": "Verify proper error handling when wrong password",
+          "type": "functional",
+          "priority": "medium",
+          "category": "negative",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to login page",
+            "Attempt login with wrong password",
+            "Submit the form/request",
+            "Verify appropriate error handling",
+            "Ensure no system corruption"
+          ],
+          "expected_result": "Appropriate error message displayed for wrong password",
+          "estimated_duration": 3,
+          "tags": [
+            "login",
+            "functional",
+            "negative",
+            "error-handling"
+          ]
+        },
+        {
+          "id": "UI_001",
+          "name": "UI: Login Page Layout",
+          "description": "Verify UI elements are properly displayed for login",
+          "type": "ui",
+          "priority": "medium",
+          "category": "ui-validation",
+          "preconditions": [
+            "Browser is launched",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to login page",
+            "Verify all UI elements are visible",
+            "Check responsive design on different screen sizes",
+            "Validate proper styling and formatting"
+          ],
+          "expected_result": "UI meets design requirements for login",
+          "estimated_duration": 5,
+          "tags": [
+            "login",
+            "ui",
+            "accessibility"
+          ]
+        },
+        {
+          "id": "UI_002",
+          "name": "UI: Login Accessibility",
+          "description": "Verify login functionality meets accessibility standards",
+          "type": "ui",
+          "priority": "medium",
+          "category": "ui-validation",
+          "preconditions": [
+            "Browser is launched",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Access login page using keyboard navigation",
+            "Verify all form elements have proper labels",
+            "Check color contrast ratios",
+            "Test with screen reader"
+          ],
+          "expected_result": "UI meets design requirements for login",
+          "estimated_duration": 5,
+          "tags": [
+            "login",
+            "ui",
+            "accessibility"
+          ]
+        },
+        {
+          "id": "API_001",
+          "name": "API: Login Endpoint Response",
+          "description": "Test login API endpoint returns correct response",
+          "type": "api",
+          "priority": "high",
+          "category": "api-validation",
+          "preconditions": [
+            "API server is running",
+            "Valid API credentials"
+          ],
+          "test_steps": [
+            "Send GET/POST request to /api/login",
+            "Verify response status code (200/201)",
+            "Validate response JSON structure",
+            "Check response time < 2 seconds"
+          ],
+          "expected_result": "API responds correctly for login operations",
+          "estimated_duration": 3,
+          "tags": [
+            "login",
+            "api",
+            "validation"
+          ]
+        },
+        {
+          "id": "API_002",
+          "name": "API: Login Error Handling",
+          "description": "Test login API handles invalid requests properly",
+          "type": "api",
+          "priority": "high",
+          "category": "api-validation",
+          "preconditions": [
+            "API server is running",
+            "Valid API credentials"
+          ],
+          "test_steps": [
+            "Send invalid request to /api/login",
+            "Verify 4xx/5xx error status code",
+            "Validate error message format",
+            "Check error response structure"
+          ],
+          "expected_result": "API responds correctly for login operations",
+          "estimated_duration": 3,
+          "tags": [
+            "login",
+            "api",
+            "validation"
+          ]
+        },
+        {
+          "id": "INT_001",
+          "name": "Integration: Login with External Systems",
+          "description": "Test login functionality integrates properly with external services",
+          "type": "integration",
+          "priority": "medium",
+          "category": "system-integration",
+          "preconditions": [
+            "All systems are up and running",
+            "Network connectivity available"
+          ],
+          "test_steps": [
+            "Execute login workflow",
+            "Verify data flows between systems",
+            "Check external service integration",
+            "Validate end-to-end process completion"
+          ],
+          "expected_result": "Login works seamlessly across all integrated systems",
+          "estimated_duration": 10,
+          "tags": [
+            "login",
+            "integration",
+            "end-to-end"
+          ]
+        },
+        {
+          "id": "SEC_001",
+          "name": "Security: Login Authorization",
+          "description": "Verify proper authorization for login operations",
+          "type": "security",
+          "priority": "high",
+          "category": "security-validation",
+          "preconditions": [
+            "Security testing environment setup"
+          ],
+          "test_steps": [
+            "Attempt login without proper permissions",
+            "Verify 403/401 error response",
+            "Test with different user roles",
+            "Validate access control enforcement"
+          ],
+          "expected_result": "Login maintains security standards",
+          "estimated_duration": 8,
+          "tags": [
+            "login",
+            "security",
+            "validation"
+          ]
+        },
+        {
+          "id": "SEC_002",
+          "name": "Security: Login Input Validation",
+          "description": "Test login input validation prevents security issues",
+          "type": "security",
+          "priority": "high",
+          "category": "security-validation",
+          "preconditions": [
+            "Security testing environment setup"
+          ],
+          "test_steps": [
+            "Provide malicious input to login function",
+            "Test for SQL injection vulnerabilities",
+            "Check XSS prevention",
+            "Validate input sanitization"
+          ],
+          "expected_result": "Login maintains security standards",
+          "estimated_duration": 8,
+          "tags": [
+            "login",
+            "security",
+            "validation"
+          ]
+        }
+      ],
+      "generated_at": "2025-10-29T17:16:15.431440",
+      "test_count": 11,
+      "confidence_score": 0.7521758673155051
+    },
+    {
+      "user_story": "As a shopper, I want to search for products so that I can find items I want to buy",
+      "parsed_story": {
+        "persona": "shopper",
+        "action": "search for products so that I can find items I want to buy",
+        "benefit": "search for products so that I can find items I want to buy",
+        "detected_actions": [
+          "search"
+        ],
+        "keywords": [
+          "as",
+          "a",
+          "shopper",
+          "i",
+          "want",
+          "to",
+          "search",
+          "for",
+          "products",
+          "so",
+          "that",
+          "i",
+          "can",
+          "find",
+          "items",
+          "i",
+          "want",
+          "to",
+          "buy"
+        ]
+      },
+      "generated_tests": [
+        {
+          "id": "FUNC_001",
+          "name": "Positive: Valid Search Term",
+          "description": "Verify that search works correctly when valid search term",
+          "type": "functional",
+          "priority": "high",
+          "category": "positive",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to search page",
+            "Perform search with valid data",
+            "Submit the form/request",
+            "Verify successful completion",
+            "Validate expected results"
+          ],
+          "expected_result": "Search succeeds with valid search term",
+          "estimated_duration": 2,
+          "tags": [
+            "search",
+            "functional",
+            "positive"
+          ]
+        },
+        {
+          "id": "FUNC_002",
+          "name": "Positive: Results Found",
+          "description": "Verify that search works correctly when results found",
+          "type": "functional",
+          "priority": "high",
+          "category": "positive",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to search page",
+            "Perform search with valid data",
+            "Submit the form/request",
+            "Verify successful completion",
+            "Validate expected results"
+          ],
+          "expected_result": "Search succeeds with results found",
+          "estimated_duration": 2,
+          "tags": [
+            "search",
+            "functional",
+            "positive"
+          ]
+        },
+        {
+          "id": "FUNC_003",
+          "name": "Negative: No Results",
+          "description": "Verify proper error handling when no results",
+          "type": "functional",
+          "priority": "medium",
+          "category": "negative",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to search page",
+            "Attempt search with no results",
+            "Submit the form/request",
+            "Verify appropriate error handling",
+            "Ensure no system corruption"
+          ],
+          "expected_result": "Appropriate error message displayed for no results",
+          "estimated_duration": 3,
+          "tags": [
+            "search",
+            "functional",
+            "negative",
+            "error-handling"
+          ]
+        },
+        {
+          "id": "FUNC_004",
+          "name": "Negative: Special Characters",
+          "description": "Verify proper error handling when special characters",
+          "type": "functional",
+          "priority": "medium",
+          "category": "negative",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to search page",
+            "Attempt search with special characters",
+            "Submit the form/request",
+            "Verify appropriate error handling",
+            "Ensure no system corruption"
+          ],
+          "expected_result": "Appropriate error message displayed for special characters",
+          "estimated_duration": 3,
+          "tags": [
+            "search",
+            "functional",
+            "negative",
+            "error-handling"
+          ]
+        },
+        {
+          "id": "UI_001",
+          "name": "UI: Search Page Layout",
+          "description": "Verify UI elements are properly displayed for search",
+          "type": "ui",
+          "priority": "medium",
+          "category": "ui-validation",
+          "preconditions": [
+            "Browser is launched",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to search page",
+            "Verify all UI elements are visible",
+            "Check responsive design on different screen sizes",
+            "Validate proper styling and formatting"
+          ],
+          "expected_result": "UI meets design requirements for search",
+          "estimated_duration": 5,
+          "tags": [
+            "search",
+            "ui",
+            "accessibility"
+          ]
+        },
+        {
+          "id": "UI_002",
+          "name": "UI: Search Accessibility",
+          "description": "Verify search functionality meets accessibility standards",
+          "type": "ui",
+          "priority": "medium",
+          "category": "ui-validation",
+          "preconditions": [
+            "Browser is launched",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Access search page using keyboard navigation",
+            "Verify all form elements have proper labels",
+            "Check color contrast ratios",
+            "Test with screen reader"
+          ],
+          "expected_result": "UI meets design requirements for search",
+          "estimated_duration": 5,
+          "tags": [
+            "search",
+            "ui",
+            "accessibility"
+          ]
+        },
+        {
+          "id": "API_001",
+          "name": "API: Search Endpoint Response",
+          "description": "Test search API endpoint returns correct response",
+          "type": "api",
+          "priority": "high",
+          "category": "api-validation",
+          "preconditions": [
+            "API server is running",
+            "Valid API credentials"
+          ],
+          "test_steps": [
+            "Send GET/POST request to /api/search",
+            "Verify response status code (200/201)",
+            "Validate response JSON structure",
+            "Check response time < 2 seconds"
+          ],
+          "expected_result": "API responds correctly for search operations",
+          "estimated_duration": 3,
+          "tags": [
+            "search",
+            "api",
+            "validation"
+          ]
+        },
+        {
+          "id": "API_002",
+          "name": "API: Search Error Handling",
+          "description": "Test search API handles invalid requests properly",
+          "type": "api",
+          "priority": "high",
+          "category": "api-validation",
+          "preconditions": [
+            "API server is running",
+            "Valid API credentials"
+          ],
+          "test_steps": [
+            "Send invalid request to /api/search",
+            "Verify 4xx/5xx error status code",
+            "Validate error message format",
+            "Check error response structure"
+          ],
+          "expected_result": "API responds correctly for search operations",
+          "estimated_duration": 3,
+          "tags": [
+            "search",
+            "api",
+            "validation"
+          ]
+        },
+        {
+          "id": "INT_001",
+          "name": "Integration: Search with External Systems",
+          "description": "Test search functionality integrates properly with external services",
+          "type": "integration",
+          "priority": "medium",
+          "category": "system-integration",
+          "preconditions": [
+            "All systems are up and running",
+            "Network connectivity available"
+          ],
+          "test_steps": [
+            "Execute search workflow",
+            "Verify data flows between systems",
+            "Check external service integration",
+            "Validate end-to-end process completion"
+          ],
+          "expected_result": "Search works seamlessly across all integrated systems",
+          "estimated_duration": 10,
+          "tags": [
+            "search",
+            "integration",
+            "end-to-end"
+          ]
+        },
+        {
+          "id": "SEC_001",
+          "name": "Security: Search Authorization",
+          "description": "Verify proper authorization for search operations",
+          "type": "security",
+          "priority": "high",
+          "category": "security-validation",
+          "preconditions": [
+            "Security testing environment setup"
+          ],
+          "test_steps": [
+            "Attempt search without proper permissions",
+            "Verify 403/401 error response",
+            "Test with different user roles",
+            "Validate access control enforcement"
+          ],
+          "expected_result": "Search maintains security standards",
+          "estimated_duration": 8,
+          "tags": [
+            "search",
+            "security",
+            "validation"
+          ]
+        },
+        {
+          "id": "SEC_002",
+          "name": "Security: Search Input Validation",
+          "description": "Test search input validation prevents security issues",
+          "type": "security",
+          "priority": "high",
+          "category": "security-validation",
+          "preconditions": [
+            "Security testing environment setup"
+          ],
+          "test_steps": [
+            "Provide malicious input to search function",
+            "Test for SQL injection vulnerabilities",
+            "Check XSS prevention",
+            "Validate input sanitization"
+          ],
+          "expected_result": "Search maintains security standards",
+          "estimated_duration": 8,
+          "tags": [
+            "search",
+            "security",
+            "validation"
+          ]
+        }
+      ],
+      "generated_at": "2025-10-29T17:16:15.431493",
+      "test_count": 11,
+      "confidence_score": 0.7449030868468431
+    },
+    {
+      "user_story": "As a user, I want to pay for my order securely so that my financial information is protected",
+      "parsed_story": {
+        "persona": "user",
+        "action": "pay for my order securely so that my financial information is protected",
+        "benefit": "pay for my order securely so that my financial information is protected",
+        "detected_actions": [],
+        "keywords": [
+          "as",
+          "a",
+          "user",
+          "i",
+          "want",
+          "to",
+          "pay",
+          "for",
+          "my",
+          "order",
+          "securely",
+          "so",
+          "that",
+          "my",
+          "financial",
+          "information",
+          "is",
+          "protected"
+        ]
+      },
+      "generated_tests": [
+        {
+          "id": "FUNC_001",
+          "name": "Positive: Valid Scenario",
+          "description": "Verify that general works correctly when valid scenario",
+          "type": "functional",
+          "priority": "high",
+          "category": "positive",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to general page",
+            "Perform general with valid data",
+            "Submit the form/request",
+            "Verify successful completion",
+            "Validate expected results"
+          ],
+          "expected_result": "General succeeds with valid scenario",
+          "estimated_duration": 2,
+          "tags": [
+            "general",
+            "functional",
+            "positive"
+          ]
+        },
+        {
+          "id": "FUNC_002",
+          "name": "Negative: Invalid Scenario",
+          "description": "Verify proper error handling when invalid scenario",
+          "type": "functional",
+          "priority": "medium",
+          "category": "negative",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to general page",
+            "Attempt general with invalid scenario",
+            "Submit the form/request",
+            "Verify appropriate error handling",
+            "Ensure no system corruption"
+          ],
+          "expected_result": "Appropriate error message displayed for invalid scenario",
+          "estimated_duration": 3,
+          "tags": [
+            "general",
+            "functional",
+            "negative",
+            "error-handling"
+          ]
+        },
+        {
+          "id": "UI_001",
+          "name": "UI: General Page Layout",
+          "description": "Verify UI elements are properly displayed for general",
+          "type": "ui",
+          "priority": "medium",
+          "category": "ui-validation",
+          "preconditions": [
+            "Browser is launched",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to general page",
+            "Verify all UI elements are visible",
+            "Check responsive design on different screen sizes",
+            "Validate proper styling and formatting"
+          ],
+          "expected_result": "UI meets design requirements for general",
+          "estimated_duration": 5,
+          "tags": [
+            "general",
+            "ui",
+            "accessibility"
+          ]
+        },
+        {
+          "id": "UI_002",
+          "name": "UI: General Accessibility",
+          "description": "Verify general functionality meets accessibility standards",
+          "type": "ui",
+          "priority": "medium",
+          "category": "ui-validation",
+          "preconditions": [
+            "Browser is launched",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Access general page using keyboard navigation",
+            "Verify all form elements have proper labels",
+            "Check color contrast ratios",
+            "Test with screen reader"
+          ],
+          "expected_result": "UI meets design requirements for general",
+          "estimated_duration": 5,
+          "tags": [
+            "general",
+            "ui",
+            "accessibility"
+          ]
+        },
+        {
+          "id": "API_001",
+          "name": "API: General Endpoint Response",
+          "description": "Test general API endpoint returns correct response",
+          "type": "api",
+          "priority": "high",
+          "category": "api-validation",
+          "preconditions": [
+            "API server is running",
+            "Valid API credentials"
+          ],
+          "test_steps": [
+            "Send GET/POST request to /api/general",
+            "Verify response status code (200/201)",
+            "Validate response JSON structure",
+            "Check response time < 2 seconds"
+          ],
+          "expected_result": "API responds correctly for general operations",
+          "estimated_duration": 3,
+          "tags": [
+            "general",
+            "api",
+            "validation"
+          ]
+        },
+        {
+          "id": "API_002",
+          "name": "API: General Error Handling",
+          "description": "Test general API handles invalid requests properly",
+          "type": "api",
+          "priority": "high",
+          "category": "api-validation",
+          "preconditions": [
+            "API server is running",
+            "Valid API credentials"
+          ],
+          "test_steps": [
+            "Send invalid request to /api/general",
+            "Verify 4xx/5xx error status code",
+            "Validate error message format",
+            "Check error response structure"
+          ],
+          "expected_result": "API responds correctly for general operations",
+          "estimated_duration": 3,
+          "tags": [
+            "general",
+            "api",
+            "validation"
+          ]
+        },
+        {
+          "id": "INT_001",
+          "name": "Integration: General with External Systems",
+          "description": "Test general functionality integrates properly with external services",
+          "type": "integration",
+          "priority": "medium",
+          "category": "system-integration",
+          "preconditions": [
+            "All systems are up and running",
+            "Network connectivity available"
+          ],
+          "test_steps": [
+            "Execute general workflow",
+            "Verify data flows between systems",
+            "Check external service integration",
+            "Validate end-to-end process completion"
+          ],
+          "expected_result": "General works seamlessly across all integrated systems",
+          "estimated_duration": 10,
+          "tags": [
+            "general",
+            "integration",
+            "end-to-end"
+          ]
+        },
+        {
+          "id": "SEC_001",
+          "name": "Security: General Authorization",
+          "description": "Verify proper authorization for general operations",
+          "type": "security",
+          "priority": "high",
+          "category": "security-validation",
+          "preconditions": [
+            "Security testing environment setup"
+          ],
+          "test_steps": [
+            "Attempt general without proper permissions",
+            "Verify 403/401 error response",
+            "Test with different user roles",
+            "Validate access control enforcement"
+          ],
+          "expected_result": "General maintains security standards",
+          "estimated_duration": 8,
+          "tags": [
+            "general",
+            "security",
+            "validation"
+          ]
+        },
+        {
+          "id": "SEC_002",
+          "name": "Security: General Input Validation",
+          "description": "Test general input validation prevents security issues",
+          "type": "security",
+          "priority": "high",
+          "category": "security-validation",
+          "preconditions": [
+            "Security testing environment setup"
+          ],
+          "test_steps": [
+            "Provide malicious input to general function",
+            "Test for SQL injection vulnerabilities",
+            "Check XSS prevention",
+            "Validate input sanitization"
+          ],
+          "expected_result": "General maintains security standards",
+          "estimated_duration": 8,
+          "tags": [
+            "general",
+            "security",
+            "validation"
+          ]
+        }
+      ],
+      "generated_at": "2025-10-29T17:16:15.431530",
+      "test_count": 9,
+      "confidence_score": 0.7434724254205238
+    },
+    {
+      "user_story": "As an admin, I want to manage user accounts so that I can control access to the system",
+      "parsed_story": {
+        "persona": "admin",
+        "action": "manage user accounts so that I can control access to the system",
+        "benefit": "manage user accounts so that I can control access to the system",
+        "detected_actions": [],
+        "keywords": [
+          "as",
+          "an",
+          "admin",
+          "i",
+          "want",
+          "to",
+          "manage",
+          "user",
+          "accounts",
+          "so",
+          "that",
+          "i",
+          "can",
+          "control",
+          "access",
+          "to",
+          "the",
+          "system"
+        ]
+      },
+      "generated_tests": [
+        {
+          "id": "FUNC_001",
+          "name": "Positive: Valid Scenario",
+          "description": "Verify that general works correctly when valid scenario",
+          "type": "functional",
+          "priority": "high",
+          "category": "positive",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to general page",
+            "Perform general with valid data",
+            "Submit the form/request",
+            "Verify successful completion",
+            "Validate expected results"
+          ],
+          "expected_result": "General succeeds with valid scenario",
+          "estimated_duration": 2,
+          "tags": [
+            "general",
+            "functional",
+            "positive"
+          ]
+        },
+        {
+          "id": "FUNC_002",
+          "name": "Negative: Invalid Scenario",
+          "description": "Verify proper error handling when invalid scenario",
+          "type": "functional",
+          "priority": "medium",
+          "category": "negative",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to general page",
+            "Attempt general with invalid scenario",
+            "Submit the form/request",
+            "Verify appropriate error handling",
+            "Ensure no system corruption"
+          ],
+          "expected_result": "Appropriate error message displayed for invalid scenario",
+          "estimated_duration": 3,
+          "tags": [
+            "general",
+            "functional",
+            "negative",
+            "error-handling"
+          ]
+        },
+        {
+          "id": "UI_001",
+          "name": "UI: General Page Layout",
+          "description": "Verify UI elements are properly displayed for general",
+          "type": "ui",
+          "priority": "medium",
+          "category": "ui-validation",
+          "preconditions": [
+            "Browser is launched",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to general page",
+            "Verify all UI elements are visible",
+            "Check responsive design on different screen sizes",
+            "Validate proper styling and formatting"
+          ],
+          "expected_result": "UI meets design requirements for general",
+          "estimated_duration": 5,
+          "tags": [
+            "general",
+            "ui",
+            "accessibility"
+          ]
+        },
+        {
+          "id": "UI_002",
+          "name": "UI: General Accessibility",
+          "description": "Verify general functionality meets accessibility standards",
+          "type": "ui",
+          "priority": "medium",
+          "category": "ui-validation",
+          "preconditions": [
+            "Browser is launched",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Access general page using keyboard navigation",
+            "Verify all form elements have proper labels",
+            "Check color contrast ratios",
+            "Test with screen reader"
+          ],
+          "expected_result": "UI meets design requirements for general",
+          "estimated_duration": 5,
+          "tags": [
+            "general",
+            "ui",
+            "accessibility"
+          ]
+        },
+        {
+          "id": "API_001",
+          "name": "API: General Endpoint Response",
+          "description": "Test general API endpoint returns correct response",
+          "type": "api",
+          "priority": "high",
+          "category": "api-validation",
+          "preconditions": [
+            "API server is running",
+            "Valid API credentials"
+          ],
+          "test_steps": [
+            "Send GET/POST request to /api/general",
+            "Verify response status code (200/201)",
+            "Validate response JSON structure",
+            "Check response time < 2 seconds"
+          ],
+          "expected_result": "API responds correctly for general operations",
+          "estimated_duration": 3,
+          "tags": [
+            "general",
+            "api",
+            "validation"
+          ]
+        },
+        {
+          "id": "API_002",
+          "name": "API: General Error Handling",
+          "description": "Test general API handles invalid requests properly",
+          "type": "api",
+          "priority": "high",
+          "category": "api-validation",
+          "preconditions": [
+            "API server is running",
+            "Valid API credentials"
+          ],
+          "test_steps": [
+            "Send invalid request to /api/general",
+            "Verify 4xx/5xx error status code",
+            "Validate error message format",
+            "Check error response structure"
+          ],
+          "expected_result": "API responds correctly for general operations",
+          "estimated_duration": 3,
+          "tags": [
+            "general",
+            "api",
+            "validation"
+          ]
+        },
+        {
+          "id": "INT_001",
+          "name": "Integration: General with External Systems",
+          "description": "Test general functionality integrates properly with external services",
+          "type": "integration",
+          "priority": "medium",
+          "category": "system-integration",
+          "preconditions": [
+            "All systems are up and running",
+            "Network connectivity available"
+          ],
+          "test_steps": [
+            "Execute general workflow",
+            "Verify data flows between systems",
+            "Check external service integration",
+            "Validate end-to-end process completion"
+          ],
+          "expected_result": "General works seamlessly across all integrated systems",
+          "estimated_duration": 10,
+          "tags": [
+            "general",
+            "integration",
+            "end-to-end"
+          ]
+        },
+        {
+          "id": "SEC_001",
+          "name": "Security: General Authorization",
+          "description": "Verify proper authorization for general operations",
+          "type": "security",
+          "priority": "high",
+          "category": "security-validation",
+          "preconditions": [
+            "Security testing environment setup"
+          ],
+          "test_steps": [
+            "Attempt general without proper permissions",
+            "Verify 403/401 error response",
+            "Test with different user roles",
+            "Validate access control enforcement"
+          ],
+          "expected_result": "General maintains security standards",
+          "estimated_duration": 8,
+          "tags": [
+            "general",
+            "security",
+            "validation"
+          ]
+        },
+        {
+          "id": "SEC_002",
+          "name": "Security: General Input Validation",
+          "description": "Test general input validation prevents security issues",
+          "type": "security",
+          "priority": "high",
+          "category": "security-validation",
+          "preconditions": [
+            "Security testing environment setup"
+          ],
+          "test_steps": [
+            "Provide malicious input to general function",
+            "Test for SQL injection vulnerabilities",
+            "Check XSS prevention",
+            "Validate input sanitization"
+          ],
+          "expected_result": "General maintains security standards",
+          "estimated_duration": 8,
+          "tags": [
+            "general",
+            "security",
+            "validation"
+          ]
+        }
+      ],
+      "generated_at": "2025-10-29T17:16:15.431561",
+      "test_count": 9,
+      "confidence_score": 0.768996329113528
+    },
+    {
+      "user_story": "As a customer, I want to track my order status so that I know when my items will arrive",
+      "parsed_story": {
+        "persona": "customer",
+        "action": "track my order status so that I know when my items will arrive",
+        "benefit": "track my order status so that I know when my items will arrive",
+        "detected_actions": [],
+        "keywords": [
+          "as",
+          "a",
+          "customer",
+          "i",
+          "want",
+          "to",
+          "track",
+          "my",
+          "order",
+          "status",
+          "so",
+          "that",
+          "i",
+          "know",
+          "when",
+          "my",
+          "items",
+          "will",
+          "arrive"
+        ]
+      },
+      "generated_tests": [
+        {
+          "id": "FUNC_001",
+          "name": "Positive: Valid Scenario",
+          "description": "Verify that general works correctly when valid scenario",
+          "type": "functional",
+          "priority": "high",
+          "category": "positive",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to general page",
+            "Perform general with valid data",
+            "Submit the form/request",
+            "Verify successful completion",
+            "Validate expected results"
+          ],
+          "expected_result": "General succeeds with valid scenario",
+          "estimated_duration": 2,
+          "tags": [
+            "general",
+            "functional",
+            "positive"
+          ]
+        },
+        {
+          "id": "FUNC_002",
+          "name": "Negative: Invalid Scenario",
+          "description": "Verify proper error handling when invalid scenario",
+          "type": "functional",
+          "priority": "medium",
+          "category": "negative",
+          "preconditions": [
+            "User is logged in",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to general page",
+            "Attempt general with invalid scenario",
+            "Submit the form/request",
+            "Verify appropriate error handling",
+            "Ensure no system corruption"
+          ],
+          "expected_result": "Appropriate error message displayed for invalid scenario",
+          "estimated_duration": 3,
+          "tags": [
+            "general",
+            "functional",
+            "negative",
+            "error-handling"
+          ]
+        },
+        {
+          "id": "UI_001",
+          "name": "UI: General Page Layout",
+          "description": "Verify UI elements are properly displayed for general",
+          "type": "ui",
+          "priority": "medium",
+          "category": "ui-validation",
+          "preconditions": [
+            "Browser is launched",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Navigate to general page",
+            "Verify all UI elements are visible",
+            "Check responsive design on different screen sizes",
+            "Validate proper styling and formatting"
+          ],
+          "expected_result": "UI meets design requirements for general",
+          "estimated_duration": 5,
+          "tags": [
+            "general",
+            "ui",
+            "accessibility"
+          ]
+        },
+        {
+          "id": "UI_002",
+          "name": "UI: General Accessibility",
+          "description": "Verify general functionality meets accessibility standards",
+          "type": "ui",
+          "priority": "medium",
+          "category": "ui-validation",
+          "preconditions": [
+            "Browser is launched",
+            "Application is accessible"
+          ],
+          "test_steps": [
+            "Access general page using keyboard navigation",
+            "Verify all form elements have proper labels",
+            "Check color contrast ratios",
+            "Test with screen reader"
+          ],
+          "expected_result": "UI meets design requirements for general",
+          "estimated_duration": 5,
+          "tags": [
+            "general",
+            "ui",
+            "accessibility"
+          ]
+        },
+        {
+          "id": "API_001",
+          "name": "API: General Endpoint Response",
+          "description": "Test general API endpoint returns correct response",
+          "type": "api",
+          "priority": "high",
+          "category": "api-validation",
+          "preconditions": [
+            "API server is running",
+            "Valid API credentials"
+          ],
+          "test_steps": [
+            "Send GET/POST request to /api/general",
+            "Verify response status code (200/201)",
+            "Validate response JSON structure",
+            "Check response time < 2 seconds"
+          ],
+          "expected_result": "API responds correctly for general operations",
+          "estimated_duration": 3,
+          "tags": [
+            "general",
+            "api",
+            "validation"
+          ]
+        },
+        {
+          "id": "API_002",
+          "name": "API: General Error Handling",
+          "description": "Test general API handles invalid requests properly",
+          "type": "api",
+          "priority": "high",
+          "category": "api-validation",
+          "preconditions": [
+            "API server is running",
+            "Valid API credentials"
+          ],
+          "test_steps": [
+            "Send invalid request to /api/general",
+            "Verify 4xx/5xx error status code",
+            "Validate error message format",
+            "Check error response structure"
+          ],
+          "expected_result": "API responds correctly for general operations",
+          "estimated_duration": 3,
+          "tags": [
+            "general",
+            "api",
+            "validation"
+          ]
+        },
+        {
+          "id": "INT_001",
+          "name": "Integration: General with External Systems",
+          "description": "Test general functionality integrates properly with external services",
+          "type": "integration",
+          "priority": "medium",
+          "category": "system-integration",
+          "preconditions": [
+            "All systems are up and running",
+            "Network connectivity available"
+          ],
+          "test_steps": [
+            "Execute general workflow",
+            "Verify data flows between systems",
+            "Check external service integration",
+            "Validate end-to-end process completion"
+          ],
+          "expected_result": "General works seamlessly across all integrated systems",
+          "estimated_duration": 10,
+          "tags": [
+            "general",
+            "integration",
+            "end-to-end"
+          ]
+        },
+        {
+          "id": "SEC_001",
+          "name": "Security: General Authorization",
+          "description": "Verify proper authorization for general operations",
+          "type": "security",
+          "priority": "high",
+          "category": "security-validation",
+          "preconditions": [
+            "Security testing environment setup"
+          ],
+          "test_steps": [
+            "Attempt general without proper permissions",
+            "Verify 403/401 error response",
+            "Test with different user roles",
+            "Validate access control enforcement"
+          ],
+          "expected_result": "General maintains security standards",
+          "estimated_duration": 8,
+          "tags": [
+            "general",
+            "security",
+            "validation"
+          ]
+        },
+        {
+          "id": "SEC_002",
+          "name": "Security: General Input Validation",
+          "description": "Test general input validation prevents security issues",
+          "type": "security",
+          "priority": "high",
+          "category": "security-validation",
+          "preconditions": [
+            "Security testing environment setup"
+          ],
+          "test_steps": [
+            "Provide malicious input to general function",
+            "Test for SQL injection vulnerabilities",
+            "Check XSS prevention",
+            "Validate input sanitization"
+          ],
+          "expected_result": "General maintains security standards",
+          "estimated_duration": 8,
+          "tags": [
+            "general",
+            "security",
+            "validation"
+          ]
+        }
+      ],
+      "generated_at": "2025-10-29T17:16:15.431589",
+      "test_count": 9,
+      "confidence_score": 0.840843733309896
+    }
+  ],
+  "tests_by_type": {
+    "functional": [
+      {
+        "id": "FUNC_001",
+        "name": "Positive: Valid Credentials",
+        "description": "Verify that login works correctly when valid credentials",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to login page",
+          "Perform login with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "Login succeeds with valid credentials",
+        "estimated_duration": 2,
+        "tags": [
+          "login",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_002",
+        "name": "Positive: Remember Me Enabled",
+        "description": "Verify that login works correctly when remember me enabled",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to login page",
+          "Perform login with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "Login succeeds with remember me enabled",
+        "estimated_duration": 2,
+        "tags": [
+          "login",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_003",
+        "name": "Negative: Invalid Username",
+        "description": "Verify proper error handling when invalid username",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to login page",
+          "Attempt login with invalid username",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for invalid username",
+        "estimated_duration": 3,
+        "tags": [
+          "login",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "FUNC_004",
+        "name": "Negative: Wrong Password",
+        "description": "Verify proper error handling when wrong password",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to login page",
+          "Attempt login with wrong password",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for wrong password",
+        "estimated_duration": 3,
+        "tags": [
+          "login",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "FUNC_001",
+        "name": "Positive: Valid Search Term",
+        "description": "Verify that search works correctly when valid search term",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to search page",
+          "Perform search with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "Search succeeds with valid search term",
+        "estimated_duration": 2,
+        "tags": [
+          "search",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_002",
+        "name": "Positive: Results Found",
+        "description": "Verify that search works correctly when results found",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to search page",
+          "Perform search with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "Search succeeds with results found",
+        "estimated_duration": 2,
+        "tags": [
+          "search",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_003",
+        "name": "Negative: No Results",
+        "description": "Verify proper error handling when no results",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to search page",
+          "Attempt search with no results",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for no results",
+        "estimated_duration": 3,
+        "tags": [
+          "search",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "FUNC_004",
+        "name": "Negative: Special Characters",
+        "description": "Verify proper error handling when special characters",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to search page",
+          "Attempt search with special characters",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for special characters",
+        "estimated_duration": 3,
+        "tags": [
+          "search",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "FUNC_001",
+        "name": "Positive: Valid Scenario",
+        "description": "Verify that general works correctly when valid scenario",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Perform general with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "General succeeds with valid scenario",
+        "estimated_duration": 2,
+        "tags": [
+          "general",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_002",
+        "name": "Negative: Invalid Scenario",
+        "description": "Verify proper error handling when invalid scenario",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Attempt general with invalid scenario",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for invalid scenario",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "FUNC_001",
+        "name": "Positive: Valid Scenario",
+        "description": "Verify that general works correctly when valid scenario",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Perform general with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "General succeeds with valid scenario",
+        "estimated_duration": 2,
+        "tags": [
+          "general",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_002",
+        "name": "Negative: Invalid Scenario",
+        "description": "Verify proper error handling when invalid scenario",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Attempt general with invalid scenario",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for invalid scenario",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "FUNC_001",
+        "name": "Positive: Valid Scenario",
+        "description": "Verify that general works correctly when valid scenario",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Perform general with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "General succeeds with valid scenario",
+        "estimated_duration": 2,
+        "tags": [
+          "general",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_002",
+        "name": "Negative: Invalid Scenario",
+        "description": "Verify proper error handling when invalid scenario",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Attempt general with invalid scenario",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for invalid scenario",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      }
+    ],
+    "ui": [
+      {
+        "id": "UI_001",
+        "name": "UI: Login Page Layout",
+        "description": "Verify UI elements are properly displayed for login",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to login page",
+          "Verify all UI elements are visible",
+          "Check responsive design on different screen sizes",
+          "Validate proper styling and formatting"
+        ],
+        "expected_result": "UI meets design requirements for login",
+        "estimated_duration": 5,
+        "tags": [
+          "login",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_002",
+        "name": "UI: Login Accessibility",
+        "description": "Verify login functionality meets accessibility standards",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Access login page using keyboard navigation",
+          "Verify all form elements have proper labels",
+          "Check color contrast ratios",
+          "Test with screen reader"
+        ],
+        "expected_result": "UI meets design requirements for login",
+        "estimated_duration": 5,
+        "tags": [
+          "login",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_001",
+        "name": "UI: Search Page Layout",
+        "description": "Verify UI elements are properly displayed for search",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to search page",
+          "Verify all UI elements are visible",
+          "Check responsive design on different screen sizes",
+          "Validate proper styling and formatting"
+        ],
+        "expected_result": "UI meets design requirements for search",
+        "estimated_duration": 5,
+        "tags": [
+          "search",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_002",
+        "name": "UI: Search Accessibility",
+        "description": "Verify search functionality meets accessibility standards",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Access search page using keyboard navigation",
+          "Verify all form elements have proper labels",
+          "Check color contrast ratios",
+          "Test with screen reader"
+        ],
+        "expected_result": "UI meets design requirements for search",
+        "estimated_duration": 5,
+        "tags": [
+          "search",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_001",
+        "name": "UI: General Page Layout",
+        "description": "Verify UI elements are properly displayed for general",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Verify all UI elements are visible",
+          "Check responsive design on different screen sizes",
+          "Validate proper styling and formatting"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_002",
+        "name": "UI: General Accessibility",
+        "description": "Verify general functionality meets accessibility standards",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Access general page using keyboard navigation",
+          "Verify all form elements have proper labels",
+          "Check color contrast ratios",
+          "Test with screen reader"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_001",
+        "name": "UI: General Page Layout",
+        "description": "Verify UI elements are properly displayed for general",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Verify all UI elements are visible",
+          "Check responsive design on different screen sizes",
+          "Validate proper styling and formatting"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_002",
+        "name": "UI: General Accessibility",
+        "description": "Verify general functionality meets accessibility standards",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Access general page using keyboard navigation",
+          "Verify all form elements have proper labels",
+          "Check color contrast ratios",
+          "Test with screen reader"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_001",
+        "name": "UI: General Page Layout",
+        "description": "Verify UI elements are properly displayed for general",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Verify all UI elements are visible",
+          "Check responsive design on different screen sizes",
+          "Validate proper styling and formatting"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_002",
+        "name": "UI: General Accessibility",
+        "description": "Verify general functionality meets accessibility standards",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Access general page using keyboard navigation",
+          "Verify all form elements have proper labels",
+          "Check color contrast ratios",
+          "Test with screen reader"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      }
+    ],
+    "api": [
+      {
+        "id": "API_001",
+        "name": "API: Login Endpoint Response",
+        "description": "Test login API endpoint returns correct response",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send GET/POST request to /api/login",
+          "Verify response status code (200/201)",
+          "Validate response JSON structure",
+          "Check response time < 2 seconds"
+        ],
+        "expected_result": "API responds correctly for login operations",
+        "estimated_duration": 3,
+        "tags": [
+          "login",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_002",
+        "name": "API: Login Error Handling",
+        "description": "Test login API handles invalid requests properly",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send invalid request to /api/login",
+          "Verify 4xx/5xx error status code",
+          "Validate error message format",
+          "Check error response structure"
+        ],
+        "expected_result": "API responds correctly for login operations",
+        "estimated_duration": 3,
+        "tags": [
+          "login",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_001",
+        "name": "API: Search Endpoint Response",
+        "description": "Test search API endpoint returns correct response",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send GET/POST request to /api/search",
+          "Verify response status code (200/201)",
+          "Validate response JSON structure",
+          "Check response time < 2 seconds"
+        ],
+        "expected_result": "API responds correctly for search operations",
+        "estimated_duration": 3,
+        "tags": [
+          "search",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_002",
+        "name": "API: Search Error Handling",
+        "description": "Test search API handles invalid requests properly",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send invalid request to /api/search",
+          "Verify 4xx/5xx error status code",
+          "Validate error message format",
+          "Check error response structure"
+        ],
+        "expected_result": "API responds correctly for search operations",
+        "estimated_duration": 3,
+        "tags": [
+          "search",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_001",
+        "name": "API: General Endpoint Response",
+        "description": "Test general API endpoint returns correct response",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send GET/POST request to /api/general",
+          "Verify response status code (200/201)",
+          "Validate response JSON structure",
+          "Check response time < 2 seconds"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_002",
+        "name": "API: General Error Handling",
+        "description": "Test general API handles invalid requests properly",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send invalid request to /api/general",
+          "Verify 4xx/5xx error status code",
+          "Validate error message format",
+          "Check error response structure"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_001",
+        "name": "API: General Endpoint Response",
+        "description": "Test general API endpoint returns correct response",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send GET/POST request to /api/general",
+          "Verify response status code (200/201)",
+          "Validate response JSON structure",
+          "Check response time < 2 seconds"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_002",
+        "name": "API: General Error Handling",
+        "description": "Test general API handles invalid requests properly",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send invalid request to /api/general",
+          "Verify 4xx/5xx error status code",
+          "Validate error message format",
+          "Check error response structure"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_001",
+        "name": "API: General Endpoint Response",
+        "description": "Test general API endpoint returns correct response",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send GET/POST request to /api/general",
+          "Verify response status code (200/201)",
+          "Validate response JSON structure",
+          "Check response time < 2 seconds"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_002",
+        "name": "API: General Error Handling",
+        "description": "Test general API handles invalid requests properly",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send invalid request to /api/general",
+          "Verify 4xx/5xx error status code",
+          "Validate error message format",
+          "Check error response structure"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      }
+    ],
+    "integration": [
+      {
+        "id": "INT_001",
+        "name": "Integration: Login with External Systems",
+        "description": "Test login functionality integrates properly with external services",
+        "type": "integration",
+        "priority": "medium",
+        "category": "system-integration",
+        "preconditions": [
+          "All systems are up and running",
+          "Network connectivity available"
+        ],
+        "test_steps": [
+          "Execute login workflow",
+          "Verify data flows between systems",
+          "Check external service integration",
+          "Validate end-to-end process completion"
+        ],
+        "expected_result": "Login works seamlessly across all integrated systems",
+        "estimated_duration": 10,
+        "tags": [
+          "login",
+          "integration",
+          "end-to-end"
+        ]
+      },
+      {
+        "id": "INT_001",
+        "name": "Integration: Search with External Systems",
+        "description": "Test search functionality integrates properly with external services",
+        "type": "integration",
+        "priority": "medium",
+        "category": "system-integration",
+        "preconditions": [
+          "All systems are up and running",
+          "Network connectivity available"
+        ],
+        "test_steps": [
+          "Execute search workflow",
+          "Verify data flows between systems",
+          "Check external service integration",
+          "Validate end-to-end process completion"
+        ],
+        "expected_result": "Search works seamlessly across all integrated systems",
+        "estimated_duration": 10,
+        "tags": [
+          "search",
+          "integration",
+          "end-to-end"
+        ]
+      },
+      {
+        "id": "INT_001",
+        "name": "Integration: General with External Systems",
+        "description": "Test general functionality integrates properly with external services",
+        "type": "integration",
+        "priority": "medium",
+        "category": "system-integration",
+        "preconditions": [
+          "All systems are up and running",
+          "Network connectivity available"
+        ],
+        "test_steps": [
+          "Execute general workflow",
+          "Verify data flows between systems",
+          "Check external service integration",
+          "Validate end-to-end process completion"
+        ],
+        "expected_result": "General works seamlessly across all integrated systems",
+        "estimated_duration": 10,
+        "tags": [
+          "general",
+          "integration",
+          "end-to-end"
+        ]
+      },
+      {
+        "id": "INT_001",
+        "name": "Integration: General with External Systems",
+        "description": "Test general functionality integrates properly with external services",
+        "type": "integration",
+        "priority": "medium",
+        "category": "system-integration",
+        "preconditions": [
+          "All systems are up and running",
+          "Network connectivity available"
+        ],
+        "test_steps": [
+          "Execute general workflow",
+          "Verify data flows between systems",
+          "Check external service integration",
+          "Validate end-to-end process completion"
+        ],
+        "expected_result": "General works seamlessly across all integrated systems",
+        "estimated_duration": 10,
+        "tags": [
+          "general",
+          "integration",
+          "end-to-end"
+        ]
+      },
+      {
+        "id": "INT_001",
+        "name": "Integration: General with External Systems",
+        "description": "Test general functionality integrates properly with external services",
+        "type": "integration",
+        "priority": "medium",
+        "category": "system-integration",
+        "preconditions": [
+          "All systems are up and running",
+          "Network connectivity available"
+        ],
+        "test_steps": [
+          "Execute general workflow",
+          "Verify data flows between systems",
+          "Check external service integration",
+          "Validate end-to-end process completion"
+        ],
+        "expected_result": "General works seamlessly across all integrated systems",
+        "estimated_duration": 10,
+        "tags": [
+          "general",
+          "integration",
+          "end-to-end"
+        ]
+      }
+    ],
+    "security": [
+      {
+        "id": "SEC_001",
+        "name": "Security: Login Authorization",
+        "description": "Verify proper authorization for login operations",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Attempt login without proper permissions",
+          "Verify 403/401 error response",
+          "Test with different user roles",
+          "Validate access control enforcement"
+        ],
+        "expected_result": "Login maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "login",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_002",
+        "name": "Security: Login Input Validation",
+        "description": "Test login input validation prevents security issues",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Provide malicious input to login function",
+          "Test for SQL injection vulnerabilities",
+          "Check XSS prevention",
+          "Validate input sanitization"
+        ],
+        "expected_result": "Login maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "login",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_001",
+        "name": "Security: Search Authorization",
+        "description": "Verify proper authorization for search operations",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Attempt search without proper permissions",
+          "Verify 403/401 error response",
+          "Test with different user roles",
+          "Validate access control enforcement"
+        ],
+        "expected_result": "Search maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "search",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_002",
+        "name": "Security: Search Input Validation",
+        "description": "Test search input validation prevents security issues",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Provide malicious input to search function",
+          "Test for SQL injection vulnerabilities",
+          "Check XSS prevention",
+          "Validate input sanitization"
+        ],
+        "expected_result": "Search maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "search",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_001",
+        "name": "Security: General Authorization",
+        "description": "Verify proper authorization for general operations",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Attempt general without proper permissions",
+          "Verify 403/401 error response",
+          "Test with different user roles",
+          "Validate access control enforcement"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_002",
+        "name": "Security: General Input Validation",
+        "description": "Test general input validation prevents security issues",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Provide malicious input to general function",
+          "Test for SQL injection vulnerabilities",
+          "Check XSS prevention",
+          "Validate input sanitization"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_001",
+        "name": "Security: General Authorization",
+        "description": "Verify proper authorization for general operations",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Attempt general without proper permissions",
+          "Verify 403/401 error response",
+          "Test with different user roles",
+          "Validate access control enforcement"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_002",
+        "name": "Security: General Input Validation",
+        "description": "Test general input validation prevents security issues",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Provide malicious input to general function",
+          "Test for SQL injection vulnerabilities",
+          "Check XSS prevention",
+          "Validate input sanitization"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_001",
+        "name": "Security: General Authorization",
+        "description": "Verify proper authorization for general operations",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Attempt general without proper permissions",
+          "Verify 403/401 error response",
+          "Test with different user roles",
+          "Validate access control enforcement"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_002",
+        "name": "Security: General Input Validation",
+        "description": "Test general input validation prevents security issues",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Provide malicious input to general function",
+          "Test for SQL injection vulnerabilities",
+          "Check XSS prevention",
+          "Validate input sanitization"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      }
+    ]
+  },
+  "test_suite": {
+    "name": "Generated Test Suite - Web_Application",
+    "description": "Auto-generated tests from 5 user stories",
+    "tests": [
+      {
+        "id": "FUNC_001",
+        "name": "Positive: Valid Credentials",
+        "description": "Verify that login works correctly when valid credentials",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to login page",
+          "Perform login with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "Login succeeds with valid credentials",
+        "estimated_duration": 2,
+        "tags": [
+          "login",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_002",
+        "name": "Positive: Remember Me Enabled",
+        "description": "Verify that login works correctly when remember me enabled",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to login page",
+          "Perform login with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "Login succeeds with remember me enabled",
+        "estimated_duration": 2,
+        "tags": [
+          "login",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_003",
+        "name": "Negative: Invalid Username",
+        "description": "Verify proper error handling when invalid username",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to login page",
+          "Attempt login with invalid username",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for invalid username",
+        "estimated_duration": 3,
+        "tags": [
+          "login",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "FUNC_004",
+        "name": "Negative: Wrong Password",
+        "description": "Verify proper error handling when wrong password",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to login page",
+          "Attempt login with wrong password",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for wrong password",
+        "estimated_duration": 3,
+        "tags": [
+          "login",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "UI_001",
+        "name": "UI: Login Page Layout",
+        "description": "Verify UI elements are properly displayed for login",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to login page",
+          "Verify all UI elements are visible",
+          "Check responsive design on different screen sizes",
+          "Validate proper styling and formatting"
+        ],
+        "expected_result": "UI meets design requirements for login",
+        "estimated_duration": 5,
+        "tags": [
+          "login",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_002",
+        "name": "UI: Login Accessibility",
+        "description": "Verify login functionality meets accessibility standards",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Access login page using keyboard navigation",
+          "Verify all form elements have proper labels",
+          "Check color contrast ratios",
+          "Test with screen reader"
+        ],
+        "expected_result": "UI meets design requirements for login",
+        "estimated_duration": 5,
+        "tags": [
+          "login",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "API_001",
+        "name": "API: Login Endpoint Response",
+        "description": "Test login API endpoint returns correct response",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send GET/POST request to /api/login",
+          "Verify response status code (200/201)",
+          "Validate response JSON structure",
+          "Check response time < 2 seconds"
+        ],
+        "expected_result": "API responds correctly for login operations",
+        "estimated_duration": 3,
+        "tags": [
+          "login",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_002",
+        "name": "API: Login Error Handling",
+        "description": "Test login API handles invalid requests properly",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send invalid request to /api/login",
+          "Verify 4xx/5xx error status code",
+          "Validate error message format",
+          "Check error response structure"
+        ],
+        "expected_result": "API responds correctly for login operations",
+        "estimated_duration": 3,
+        "tags": [
+          "login",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "INT_001",
+        "name": "Integration: Login with External Systems",
+        "description": "Test login functionality integrates properly with external services",
+        "type": "integration",
+        "priority": "medium",
+        "category": "system-integration",
+        "preconditions": [
+          "All systems are up and running",
+          "Network connectivity available"
+        ],
+        "test_steps": [
+          "Execute login workflow",
+          "Verify data flows between systems",
+          "Check external service integration",
+          "Validate end-to-end process completion"
+        ],
+        "expected_result": "Login works seamlessly across all integrated systems",
+        "estimated_duration": 10,
+        "tags": [
+          "login",
+          "integration",
+          "end-to-end"
+        ]
+      },
+      {
+        "id": "SEC_001",
+        "name": "Security: Login Authorization",
+        "description": "Verify proper authorization for login operations",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Attempt login without proper permissions",
+          "Verify 403/401 error response",
+          "Test with different user roles",
+          "Validate access control enforcement"
+        ],
+        "expected_result": "Login maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "login",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_002",
+        "name": "Security: Login Input Validation",
+        "description": "Test login input validation prevents security issues",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Provide malicious input to login function",
+          "Test for SQL injection vulnerabilities",
+          "Check XSS prevention",
+          "Validate input sanitization"
+        ],
+        "expected_result": "Login maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "login",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "FUNC_001",
+        "name": "Positive: Valid Search Term",
+        "description": "Verify that search works correctly when valid search term",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to search page",
+          "Perform search with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "Search succeeds with valid search term",
+        "estimated_duration": 2,
+        "tags": [
+          "search",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_002",
+        "name": "Positive: Results Found",
+        "description": "Verify that search works correctly when results found",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to search page",
+          "Perform search with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "Search succeeds with results found",
+        "estimated_duration": 2,
+        "tags": [
+          "search",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_003",
+        "name": "Negative: No Results",
+        "description": "Verify proper error handling when no results",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to search page",
+          "Attempt search with no results",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for no results",
+        "estimated_duration": 3,
+        "tags": [
+          "search",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "FUNC_004",
+        "name": "Negative: Special Characters",
+        "description": "Verify proper error handling when special characters",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to search page",
+          "Attempt search with special characters",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for special characters",
+        "estimated_duration": 3,
+        "tags": [
+          "search",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "UI_001",
+        "name": "UI: Search Page Layout",
+        "description": "Verify UI elements are properly displayed for search",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to search page",
+          "Verify all UI elements are visible",
+          "Check responsive design on different screen sizes",
+          "Validate proper styling and formatting"
+        ],
+        "expected_result": "UI meets design requirements for search",
+        "estimated_duration": 5,
+        "tags": [
+          "search",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_002",
+        "name": "UI: Search Accessibility",
+        "description": "Verify search functionality meets accessibility standards",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Access search page using keyboard navigation",
+          "Verify all form elements have proper labels",
+          "Check color contrast ratios",
+          "Test with screen reader"
+        ],
+        "expected_result": "UI meets design requirements for search",
+        "estimated_duration": 5,
+        "tags": [
+          "search",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "API_001",
+        "name": "API: Search Endpoint Response",
+        "description": "Test search API endpoint returns correct response",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send GET/POST request to /api/search",
+          "Verify response status code (200/201)",
+          "Validate response JSON structure",
+          "Check response time < 2 seconds"
+        ],
+        "expected_result": "API responds correctly for search operations",
+        "estimated_duration": 3,
+        "tags": [
+          "search",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_002",
+        "name": "API: Search Error Handling",
+        "description": "Test search API handles invalid requests properly",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send invalid request to /api/search",
+          "Verify 4xx/5xx error status code",
+          "Validate error message format",
+          "Check error response structure"
+        ],
+        "expected_result": "API responds correctly for search operations",
+        "estimated_duration": 3,
+        "tags": [
+          "search",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "INT_001",
+        "name": "Integration: Search with External Systems",
+        "description": "Test search functionality integrates properly with external services",
+        "type": "integration",
+        "priority": "medium",
+        "category": "system-integration",
+        "preconditions": [
+          "All systems are up and running",
+          "Network connectivity available"
+        ],
+        "test_steps": [
+          "Execute search workflow",
+          "Verify data flows between systems",
+          "Check external service integration",
+          "Validate end-to-end process completion"
+        ],
+        "expected_result": "Search works seamlessly across all integrated systems",
+        "estimated_duration": 10,
+        "tags": [
+          "search",
+          "integration",
+          "end-to-end"
+        ]
+      },
+      {
+        "id": "SEC_001",
+        "name": "Security: Search Authorization",
+        "description": "Verify proper authorization for search operations",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Attempt search without proper permissions",
+          "Verify 403/401 error response",
+          "Test with different user roles",
+          "Validate access control enforcement"
+        ],
+        "expected_result": "Search maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "search",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_002",
+        "name": "Security: Search Input Validation",
+        "description": "Test search input validation prevents security issues",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Provide malicious input to search function",
+          "Test for SQL injection vulnerabilities",
+          "Check XSS prevention",
+          "Validate input sanitization"
+        ],
+        "expected_result": "Search maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "search",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "FUNC_001",
+        "name": "Positive: Valid Scenario",
+        "description": "Verify that general works correctly when valid scenario",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Perform general with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "General succeeds with valid scenario",
+        "estimated_duration": 2,
+        "tags": [
+          "general",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_002",
+        "name": "Negative: Invalid Scenario",
+        "description": "Verify proper error handling when invalid scenario",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Attempt general with invalid scenario",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for invalid scenario",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "UI_001",
+        "name": "UI: General Page Layout",
+        "description": "Verify UI elements are properly displayed for general",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Verify all UI elements are visible",
+          "Check responsive design on different screen sizes",
+          "Validate proper styling and formatting"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_002",
+        "name": "UI: General Accessibility",
+        "description": "Verify general functionality meets accessibility standards",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Access general page using keyboard navigation",
+          "Verify all form elements have proper labels",
+          "Check color contrast ratios",
+          "Test with screen reader"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "API_001",
+        "name": "API: General Endpoint Response",
+        "description": "Test general API endpoint returns correct response",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send GET/POST request to /api/general",
+          "Verify response status code (200/201)",
+          "Validate response JSON structure",
+          "Check response time < 2 seconds"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_002",
+        "name": "API: General Error Handling",
+        "description": "Test general API handles invalid requests properly",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send invalid request to /api/general",
+          "Verify 4xx/5xx error status code",
+          "Validate error message format",
+          "Check error response structure"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "INT_001",
+        "name": "Integration: General with External Systems",
+        "description": "Test general functionality integrates properly with external services",
+        "type": "integration",
+        "priority": "medium",
+        "category": "system-integration",
+        "preconditions": [
+          "All systems are up and running",
+          "Network connectivity available"
+        ],
+        "test_steps": [
+          "Execute general workflow",
+          "Verify data flows between systems",
+          "Check external service integration",
+          "Validate end-to-end process completion"
+        ],
+        "expected_result": "General works seamlessly across all integrated systems",
+        "estimated_duration": 10,
+        "tags": [
+          "general",
+          "integration",
+          "end-to-end"
+        ]
+      },
+      {
+        "id": "SEC_001",
+        "name": "Security: General Authorization",
+        "description": "Verify proper authorization for general operations",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Attempt general without proper permissions",
+          "Verify 403/401 error response",
+          "Test with different user roles",
+          "Validate access control enforcement"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_002",
+        "name": "Security: General Input Validation",
+        "description": "Test general input validation prevents security issues",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Provide malicious input to general function",
+          "Test for SQL injection vulnerabilities",
+          "Check XSS prevention",
+          "Validate input sanitization"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "FUNC_001",
+        "name": "Positive: Valid Scenario",
+        "description": "Verify that general works correctly when valid scenario",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Perform general with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "General succeeds with valid scenario",
+        "estimated_duration": 2,
+        "tags": [
+          "general",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_002",
+        "name": "Negative: Invalid Scenario",
+        "description": "Verify proper error handling when invalid scenario",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Attempt general with invalid scenario",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for invalid scenario",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "UI_001",
+        "name": "UI: General Page Layout",
+        "description": "Verify UI elements are properly displayed for general",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Verify all UI elements are visible",
+          "Check responsive design on different screen sizes",
+          "Validate proper styling and formatting"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_002",
+        "name": "UI: General Accessibility",
+        "description": "Verify general functionality meets accessibility standards",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Access general page using keyboard navigation",
+          "Verify all form elements have proper labels",
+          "Check color contrast ratios",
+          "Test with screen reader"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "API_001",
+        "name": "API: General Endpoint Response",
+        "description": "Test general API endpoint returns correct response",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send GET/POST request to /api/general",
+          "Verify response status code (200/201)",
+          "Validate response JSON structure",
+          "Check response time < 2 seconds"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_002",
+        "name": "API: General Error Handling",
+        "description": "Test general API handles invalid requests properly",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send invalid request to /api/general",
+          "Verify 4xx/5xx error status code",
+          "Validate error message format",
+          "Check error response structure"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "INT_001",
+        "name": "Integration: General with External Systems",
+        "description": "Test general functionality integrates properly with external services",
+        "type": "integration",
+        "priority": "medium",
+        "category": "system-integration",
+        "preconditions": [
+          "All systems are up and running",
+          "Network connectivity available"
+        ],
+        "test_steps": [
+          "Execute general workflow",
+          "Verify data flows between systems",
+          "Check external service integration",
+          "Validate end-to-end process completion"
+        ],
+        "expected_result": "General works seamlessly across all integrated systems",
+        "estimated_duration": 10,
+        "tags": [
+          "general",
+          "integration",
+          "end-to-end"
+        ]
+      },
+      {
+        "id": "SEC_001",
+        "name": "Security: General Authorization",
+        "description": "Verify proper authorization for general operations",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Attempt general without proper permissions",
+          "Verify 403/401 error response",
+          "Test with different user roles",
+          "Validate access control enforcement"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_002",
+        "name": "Security: General Input Validation",
+        "description": "Test general input validation prevents security issues",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Provide malicious input to general function",
+          "Test for SQL injection vulnerabilities",
+          "Check XSS prevention",
+          "Validate input sanitization"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "FUNC_001",
+        "name": "Positive: Valid Scenario",
+        "description": "Verify that general works correctly when valid scenario",
+        "type": "functional",
+        "priority": "high",
+        "category": "positive",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Perform general with valid data",
+          "Submit the form/request",
+          "Verify successful completion",
+          "Validate expected results"
+        ],
+        "expected_result": "General succeeds with valid scenario",
+        "estimated_duration": 2,
+        "tags": [
+          "general",
+          "functional",
+          "positive"
+        ]
+      },
+      {
+        "id": "FUNC_002",
+        "name": "Negative: Invalid Scenario",
+        "description": "Verify proper error handling when invalid scenario",
+        "type": "functional",
+        "priority": "medium",
+        "category": "negative",
+        "preconditions": [
+          "User is logged in",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Attempt general with invalid scenario",
+          "Submit the form/request",
+          "Verify appropriate error handling",
+          "Ensure no system corruption"
+        ],
+        "expected_result": "Appropriate error message displayed for invalid scenario",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "functional",
+          "negative",
+          "error-handling"
+        ]
+      },
+      {
+        "id": "UI_001",
+        "name": "UI: General Page Layout",
+        "description": "Verify UI elements are properly displayed for general",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Navigate to general page",
+          "Verify all UI elements are visible",
+          "Check responsive design on different screen sizes",
+          "Validate proper styling and formatting"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "UI_002",
+        "name": "UI: General Accessibility",
+        "description": "Verify general functionality meets accessibility standards",
+        "type": "ui",
+        "priority": "medium",
+        "category": "ui-validation",
+        "preconditions": [
+          "Browser is launched",
+          "Application is accessible"
+        ],
+        "test_steps": [
+          "Access general page using keyboard navigation",
+          "Verify all form elements have proper labels",
+          "Check color contrast ratios",
+          "Test with screen reader"
+        ],
+        "expected_result": "UI meets design requirements for general",
+        "estimated_duration": 5,
+        "tags": [
+          "general",
+          "ui",
+          "accessibility"
+        ]
+      },
+      {
+        "id": "API_001",
+        "name": "API: General Endpoint Response",
+        "description": "Test general API endpoint returns correct response",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send GET/POST request to /api/general",
+          "Verify response status code (200/201)",
+          "Validate response JSON structure",
+          "Check response time < 2 seconds"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "API_002",
+        "name": "API: General Error Handling",
+        "description": "Test general API handles invalid requests properly",
+        "type": "api",
+        "priority": "high",
+        "category": "api-validation",
+        "preconditions": [
+          "API server is running",
+          "Valid API credentials"
+        ],
+        "test_steps": [
+          "Send invalid request to /api/general",
+          "Verify 4xx/5xx error status code",
+          "Validate error message format",
+          "Check error response structure"
+        ],
+        "expected_result": "API responds correctly for general operations",
+        "estimated_duration": 3,
+        "tags": [
+          "general",
+          "api",
+          "validation"
+        ]
+      },
+      {
+        "id": "INT_001",
+        "name": "Integration: General with External Systems",
+        "description": "Test general functionality integrates properly with external services",
+        "type": "integration",
+        "priority": "medium",
+        "category": "system-integration",
+        "preconditions": [
+          "All systems are up and running",
+          "Network connectivity available"
+        ],
+        "test_steps": [
+          "Execute general workflow",
+          "Verify data flows between systems",
+          "Check external service integration",
+          "Validate end-to-end process completion"
+        ],
+        "expected_result": "General works seamlessly across all integrated systems",
+        "estimated_duration": 10,
+        "tags": [
+          "general",
+          "integration",
+          "end-to-end"
+        ]
+      },
+      {
+        "id": "SEC_001",
+        "name": "Security: General Authorization",
+        "description": "Verify proper authorization for general operations",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Attempt general without proper permissions",
+          "Verify 403/401 error response",
+          "Test with different user roles",
+          "Validate access control enforcement"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      },
+      {
+        "id": "SEC_002",
+        "name": "Security: General Input Validation",
+        "description": "Test general input validation prevents security issues",
+        "type": "security",
+        "priority": "high",
+        "category": "security-validation",
+        "preconditions": [
+          "Security testing environment setup"
+        ],
+        "test_steps": [
+          "Provide malicious input to general function",
+          "Test for SQL injection vulnerabilities",
+          "Check XSS prevention",
+          "Validate input sanitization"
+        ],
+        "expected_result": "General maintains security standards",
+        "estimated_duration": 8,
+        "tags": [
+          "general",
+          "security",
+          "validation"
+        ]
+      }
+    ],
+    "metadata": {
+      "confidence_score": 0.7700782884012592,
+      "estimated_total_duration": 245
+    }
+  }
+}

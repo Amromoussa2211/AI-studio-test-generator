@@ -1,0 +1,916 @@
+{
+  "generated_at": "2025-10-29T17:16:15.415804",
+  "total_tests": 50,
+  "test_results": [
+    {
+      "id": "TEST_001",
+      "name": "test_email_notification",
+      "suite": "Payment",
+      "category": "performance",
+      "status": "SKIPPED",
+      "duration": 0.55,
+      "timestamp": "2025-10-28T15:16:15.406465",
+      "message": "Test failed with assertion error",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "high",
+      "browser": "chrome",
+      "os": "linux",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_002",
+      "name": "test_user_login",
+      "suite": "User Management",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 12.25,
+      "timestamp": "2025-10-29T04:16:15.406502",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "high",
+      "browser": "safari",
+      "os": "macos",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_003",
+      "name": "test_user_permissions",
+      "suite": "Payment",
+      "category": "security",
+      "status": "PASSED",
+      "duration": 5.38,
+      "timestamp": "2025-10-27T21:16:15.406517",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "smoke"
+      ],
+      "priority": "medium",
+      "browser": "firefox",
+      "os": "windows",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_004",
+      "name": "test_database_connectivity",
+      "suite": "User Management",
+      "category": "performance",
+      "status": "PASSED",
+      "duration": 8.24,
+      "timestamp": "2025-10-29T06:16:15.406528",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "high",
+      "browser": "chrome",
+      "os": "linux",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_005",
+      "name": "test_user_login",
+      "suite": "Search",
+      "category": "api",
+      "status": "FAILED",
+      "duration": 17.36,
+      "timestamp": "2025-10-27T03:16:15.406538",
+      "message": "Test failed with assertion error",
+      "error_details": "Connection timeout",
+      "tags": [
+        "optional"
+      ],
+      "priority": "high",
+      "browser": "chrome",
+      "os": "macos",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_006",
+      "name": "test_user_registration",
+      "suite": "Search",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 0.83,
+      "timestamp": "2025-10-28T03:16:15.406549",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "low",
+      "browser": "safari",
+      "os": "linux",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_007",
+      "name": "test_payment_processing",
+      "suite": "API Integration",
+      "category": "functional",
+      "status": "PASSED",
+      "duration": 12.58,
+      "timestamp": "2025-10-28T16:16:15.406557",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "low",
+      "browser": "chrome",
+      "os": "macos",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_008",
+      "name": "test_search_functionality",
+      "suite": "Authentication",
+      "category": "security",
+      "status": "PASSED",
+      "duration": 7.4,
+      "timestamp": "2025-10-27T04:16:15.406565",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "smoke"
+      ],
+      "priority": "low",
+      "browser": "firefox",
+      "os": "linux",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_009",
+      "name": "test_user_permissions",
+      "suite": "Search",
+      "category": "security",
+      "status": "PASSED",
+      "duration": 5.91,
+      "timestamp": "2025-10-28T23:16:15.406572",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "high",
+      "browser": "firefox",
+      "os": "windows",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_010",
+      "name": "test_error_handling",
+      "suite": "API Integration",
+      "category": "performance",
+      "status": "PASSED",
+      "duration": 10.37,
+      "timestamp": "2025-10-28T10:16:15.406580",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "medium",
+      "browser": "firefox",
+      "os": "windows",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_011",
+      "name": "test_user_registration",
+      "suite": "Authentication",
+      "category": "security",
+      "status": "FAILED",
+      "duration": 13.12,
+      "timestamp": "2025-10-28T03:16:15.406588",
+      "message": "Test failed with assertion error",
+      "error_details": "Connection timeout",
+      "tags": [
+        "smoke"
+      ],
+      "priority": "low",
+      "browser": "safari",
+      "os": "windows",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_012",
+      "name": "test_search_functionality",
+      "suite": "Authentication",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 8.16,
+      "timestamp": "2025-10-26T17:16:15.406602",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "high",
+      "browser": "safari",
+      "os": "linux",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_013",
+      "name": "test_user_login",
+      "suite": "Payment",
+      "category": "api",
+      "status": "FAILED",
+      "duration": 24.91,
+      "timestamp": "2025-10-28T15:16:15.406610",
+      "message": "Test failed with assertion error",
+      "error_details": "Connection timeout",
+      "tags": [
+        "optional"
+      ],
+      "priority": "high",
+      "browser": "chrome",
+      "os": "macos",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_014",
+      "name": "test_user_registration",
+      "suite": "Payment",
+      "category": "integration",
+      "status": "PASSED",
+      "duration": 12.17,
+      "timestamp": "2025-10-29T09:16:15.406619",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "smoke"
+      ],
+      "priority": "medium",
+      "browser": "firefox",
+      "os": "windows",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_015",
+      "name": "test_password_reset",
+      "suite": "Search",
+      "category": "security",
+      "status": "FAILED",
+      "duration": 24.46,
+      "timestamp": "2025-10-29T06:16:15.406627",
+      "message": "Test failed with assertion error",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "medium",
+      "browser": "safari",
+      "os": "macos",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_016",
+      "name": "test_payment_processing",
+      "suite": "Search",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 2.23,
+      "timestamp": "2025-10-29T11:16:15.406635",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "medium",
+      "browser": "chrome",
+      "os": "linux",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_017",
+      "name": "test_data_validation",
+      "suite": "Payment",
+      "category": "api",
+      "status": "PASSED",
+      "duration": 10.06,
+      "timestamp": "2025-10-29T07:16:15.406642",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "high",
+      "browser": "chrome",
+      "os": "linux",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_018",
+      "name": "test_api_endpoint",
+      "suite": "API Integration",
+      "category": "performance",
+      "status": "PASSED",
+      "duration": 0.58,
+      "timestamp": "2025-10-26T21:16:15.406650",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "smoke"
+      ],
+      "priority": "high",
+      "browser": "firefox",
+      "os": "macos",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_019",
+      "name": "test_email_notification",
+      "suite": "User Management",
+      "category": "functional",
+      "status": "PASSED",
+      "duration": 14.8,
+      "timestamp": "2025-10-28T00:16:15.406658",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "medium",
+      "browser": "safari",
+      "os": "linux",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_020",
+      "name": "test_data_encryption",
+      "suite": "User Management",
+      "category": "functional",
+      "status": "PASSED",
+      "duration": 5.25,
+      "timestamp": "2025-10-27T11:16:15.406665",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "low",
+      "browser": "chrome",
+      "os": "macos",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_021",
+      "name": "test_data_validation",
+      "suite": "Payment",
+      "category": "api",
+      "status": "PASSED",
+      "duration": 6.22,
+      "timestamp": "2025-10-26T17:16:15.406672",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "high",
+      "browser": "chrome",
+      "os": "windows",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_022",
+      "name": "test_payment_processing",
+      "suite": "Search",
+      "category": "security",
+      "status": "PASSED",
+      "duration": 0.87,
+      "timestamp": "2025-10-28T23:16:15.406681",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "low",
+      "browser": "safari",
+      "os": "macos",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_023",
+      "name": "test_error_handling",
+      "suite": "Payment",
+      "category": "security",
+      "status": "PASSED",
+      "duration": 9.25,
+      "timestamp": "2025-10-27T06:16:15.406688",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "medium",
+      "browser": "chrome",
+      "os": "macos",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_024",
+      "name": "test_database_connectivity",
+      "suite": "User Management",
+      "category": "performance",
+      "status": "PASSED",
+      "duration": 1.06,
+      "timestamp": "2025-10-27T10:16:15.406695",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "low",
+      "browser": "firefox",
+      "os": "windows",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_025",
+      "name": "test_user_registration",
+      "suite": "User Management",
+      "category": "functional",
+      "status": "PASSED",
+      "duration": 5.77,
+      "timestamp": "2025-10-28T07:16:15.406702",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "high",
+      "browser": "firefox",
+      "os": "macos",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_026",
+      "name": "test_data_validation",
+      "suite": "Search",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 7.6,
+      "timestamp": "2025-10-27T06:16:15.406710",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "medium",
+      "browser": "safari",
+      "os": "linux",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_027",
+      "name": "test_ui_responsiveness",
+      "suite": "Authentication",
+      "category": "integration",
+      "status": "PASSED",
+      "duration": 6.66,
+      "timestamp": "2025-10-28T21:16:15.406717",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "medium",
+      "browser": "chrome",
+      "os": "linux",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_028",
+      "name": "test_user_permissions",
+      "suite": "Payment",
+      "category": "performance",
+      "status": "PASSED",
+      "duration": 4.32,
+      "timestamp": "2025-10-29T10:16:15.406725",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "high",
+      "browser": "firefox",
+      "os": "linux",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_029",
+      "name": "test_email_notification",
+      "suite": "Payment",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 11.54,
+      "timestamp": "2025-10-27T18:16:15.406732",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "low",
+      "browser": "safari",
+      "os": "linux",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_030",
+      "name": "test_user_permissions",
+      "suite": "Search",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 12.94,
+      "timestamp": "2025-10-27T17:16:15.406740",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "medium",
+      "browser": "chrome",
+      "os": "windows",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_031",
+      "name": "test_data_validation",
+      "suite": "API Integration",
+      "category": "integration",
+      "status": "PASSED",
+      "duration": 1.47,
+      "timestamp": "2025-10-28T23:16:15.406747",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "medium",
+      "browser": "firefox",
+      "os": "macos",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_032",
+      "name": "test_user_permissions",
+      "suite": "Payment",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 3.48,
+      "timestamp": "2025-10-27T09:16:15.406755",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "high",
+      "browser": "firefox",
+      "os": "windows",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_033",
+      "name": "test_password_reset",
+      "suite": "User Management",
+      "category": "api",
+      "status": "FAILED",
+      "duration": 6.47,
+      "timestamp": "2025-10-27T21:16:15.406762",
+      "message": "Test failed with assertion error",
+      "error_details": "Connection timeout",
+      "tags": [
+        "critical"
+      ],
+      "priority": "low",
+      "browser": "firefox",
+      "os": "linux",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_034",
+      "name": "test_error_handling",
+      "suite": "Payment",
+      "category": "functional",
+      "status": "PASSED",
+      "duration": 13.83,
+      "timestamp": "2025-10-28T06:16:15.406770",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "medium",
+      "browser": "safari",
+      "os": "linux",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_035",
+      "name": "test_user_registration",
+      "suite": "Search",
+      "category": "performance",
+      "status": "PASSED",
+      "duration": 12.82,
+      "timestamp": "2025-10-28T13:16:15.406777",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "low",
+      "browser": "chrome",
+      "os": "windows",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_036",
+      "name": "test_search_functionality",
+      "suite": "Payment",
+      "category": "performance",
+      "status": "PASSED",
+      "duration": 4.21,
+      "timestamp": "2025-10-28T04:16:15.406785",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "medium",
+      "browser": "safari",
+      "os": "windows",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_037",
+      "name": "test_data_validation",
+      "suite": "API Integration",
+      "category": "api",
+      "status": "PASSED",
+      "duration": 1.38,
+      "timestamp": "2025-10-28T04:16:15.406793",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "high",
+      "browser": "chrome",
+      "os": "windows",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_038",
+      "name": "test_user_permissions",
+      "suite": "Authentication",
+      "category": "functional",
+      "status": "PASSED",
+      "duration": 12.36,
+      "timestamp": "2025-10-28T22:16:15.406800",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "low",
+      "browser": "chrome",
+      "os": "macos",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_039",
+      "name": "test_api_endpoint",
+      "suite": "Payment",
+      "category": "performance",
+      "status": "FAILED",
+      "duration": 22.58,
+      "timestamp": "2025-10-28T10:16:15.406808",
+      "message": "Test failed with assertion error",
+      "error_details": "Connection timeout",
+      "tags": [
+        "optional"
+      ],
+      "priority": "low",
+      "browser": "firefox",
+      "os": "linux",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_040",
+      "name": "test_error_handling",
+      "suite": "Payment",
+      "category": "security",
+      "status": "SKIPPED",
+      "duration": 0.11,
+      "timestamp": "2025-10-27T13:16:15.406816",
+      "message": "Test failed with assertion error",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "medium",
+      "browser": "firefox",
+      "os": "macos",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_041",
+      "name": "test_data_validation",
+      "suite": "Payment",
+      "category": "api",
+      "status": "PASSED",
+      "duration": 6.08,
+      "timestamp": "2025-10-28T22:16:15.406824",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "low",
+      "browser": "chrome",
+      "os": "windows",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_042",
+      "name": "test_api_endpoint",
+      "suite": "User Management",
+      "category": "api",
+      "status": "PASSED",
+      "duration": 13.16,
+      "timestamp": "2025-10-29T00:16:15.406833",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "smoke"
+      ],
+      "priority": "medium",
+      "browser": "safari",
+      "os": "windows",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_043",
+      "name": "test_ui_responsiveness",
+      "suite": "Payment",
+      "category": "performance",
+      "status": "PASSED",
+      "duration": 1.23,
+      "timestamp": "2025-10-28T14:16:15.406841",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "smoke"
+      ],
+      "priority": "medium",
+      "browser": "safari",
+      "os": "linux",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_044",
+      "name": "test_ui_responsiveness",
+      "suite": "Search",
+      "category": "integration",
+      "status": "SKIPPED",
+      "duration": 3.42,
+      "timestamp": "2025-10-28T18:16:15.406850",
+      "message": "Test failed with assertion error",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "low",
+      "browser": "safari",
+      "os": "macos",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_045",
+      "name": "test_error_handling",
+      "suite": "Authentication",
+      "category": "performance",
+      "status": "PASSED",
+      "duration": 11.91,
+      "timestamp": "2025-10-26T17:16:15.406858",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "medium",
+      "browser": "firefox",
+      "os": "macos",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_046",
+      "name": "test_database_connectivity",
+      "suite": "Payment",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 6.22,
+      "timestamp": "2025-10-29T04:16:15.406866",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "medium",
+      "browser": "chrome",
+      "os": "macos",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_047",
+      "name": "test_database_connectivity",
+      "suite": "User Management",
+      "category": "functional",
+      "status": "PASSED",
+      "duration": 2.42,
+      "timestamp": "2025-10-27T17:16:15.406874",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "smoke"
+      ],
+      "priority": "medium",
+      "browser": "safari",
+      "os": "windows",
+      "test_type": "ui"
+    },
+    {
+      "id": "TEST_048",
+      "name": "test_user_login",
+      "suite": "API Integration",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 4.58,
+      "timestamp": "2025-10-27T15:16:15.406881",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "optional"
+      ],
+      "priority": "low",
+      "browser": "safari",
+      "os": "linux",
+      "test_type": "functional"
+    },
+    {
+      "id": "TEST_049",
+      "name": "test_data_encryption",
+      "suite": "API Integration",
+      "category": "api",
+      "status": "PASSED",
+      "duration": 6.68,
+      "timestamp": "2025-10-28T21:16:15.406888",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "regression"
+      ],
+      "priority": "medium",
+      "browser": "chrome",
+      "os": "windows",
+      "test_type": "api"
+    },
+    {
+      "id": "TEST_050",
+      "name": "test_data_validation",
+      "suite": "User Management",
+      "category": "ui",
+      "status": "PASSED",
+      "duration": 7.11,
+      "timestamp": "2025-10-28T00:16:15.406895",
+      "message": "Test completed successfully",
+      "error_details": "",
+      "tags": [
+        "critical"
+      ],
+      "priority": "high",
+      "browser": "safari",
+      "os": "windows",
+      "test_type": "functional"
+    }
+  ],
+  "summary": {
+    "total": 50,
+    "passed": 41,
+    "failed": 6,
+    "skipped": 3,
+    "pass_rate": 82.0,
+    "total_duration": 404.36,
+    "avg_duration": 8.087200000000001,
+    "success_rate": 82.0
+  }
+}

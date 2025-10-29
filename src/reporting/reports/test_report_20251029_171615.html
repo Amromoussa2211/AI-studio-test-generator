@@ -1,0 +1,960 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 2024 Test Execution Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            color: #666;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .passed { color: #28a745; }
+        .failed { color: #dc3545; }
+        .skipped { color: #ffc107; }
+        .total { color: #007bff; }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .chart-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .test-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .test-table th {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .test-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .test-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .test-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .test-status.passed {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .test-status.failed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .test-status.skipped {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-icon {
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            transition: width 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .metrics {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .test-table {
+                font-size: 0.9em;
+            }
+            
+            .test-table th,
+            .test-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Q4 2024 Test Execution Report</h1>
+            <p>Comprehensive test execution results for quarterly release</p>
+            <p>Generated on: 2025-10-29 17:16:15</p>
+        </div>
+        
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="metric-value total">50</div>
+                <div class="metric-label">Total Tests</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value passed">41</div>
+                <div class="metric-label">Passed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 82.0%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value failed">6</div>
+                <div class="metric-label">Failed</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value skipped">3</div>
+                <div class="metric-label">Skipped</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value passed">82.0%</div>
+                <div class="metric-label">Pass Rate</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value total">404.36s</div>
+                <div class="metric-label">Total Duration</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="chart-container">
+                <h3 class="chart-title">📊 Test Results Overview</h3>
+                <div style="text-align: center; padding: 20px;">
+                    <canvas id="resultsChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+            
+            <h3 style="margin-bottom: 20px; color: #333;">📋 Test Results Details</h3>
+            <div style="overflow-x: auto;">
+                <table class="test-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Test Name</th>
+                            <th>Test Suite</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Duration</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr class="test-row">
+                <td class="test-number">1</td>
+                <td class="test-name">test_email_notification</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">performance</td>
+                <td class="test-status skipped">
+                    <span class="status-icon">⏭️</span>
+                    SKIPPED
+                </td>
+                <td class="test-duration">0.55s</td>
+                <td class="test-timestamp">2025-10-28T15:16:15.406465</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">2</td>
+                <td class="test-name">test_user_login</td>
+                <td class="test-suite">User Management</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">12.25s</td>
+                <td class="test-timestamp">2025-10-29T04:16:15.406502</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">3</td>
+                <td class="test-name">test_user_permissions</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">security</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">5.38s</td>
+                <td class="test-timestamp">2025-10-27T21:16:15.406517</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">4</td>
+                <td class="test-name">test_database_connectivity</td>
+                <td class="test-suite">User Management</td>
+                <td class="test-category">performance</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">8.24s</td>
+                <td class="test-timestamp">2025-10-29T06:16:15.406528</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">5</td>
+                <td class="test-name">test_user_login</td>
+                <td class="test-suite">Search</td>
+                <td class="test-category">api</td>
+                <td class="test-status failed">
+                    <span class="status-icon">❌</span>
+                    FAILED
+                </td>
+                <td class="test-duration">17.36s</td>
+                <td class="test-timestamp">2025-10-27T03:16:15.406538</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">6</td>
+                <td class="test-name">test_user_registration</td>
+                <td class="test-suite">Search</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">0.83s</td>
+                <td class="test-timestamp">2025-10-28T03:16:15.406549</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">7</td>
+                <td class="test-name">test_payment_processing</td>
+                <td class="test-suite">API Integration</td>
+                <td class="test-category">functional</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">12.58s</td>
+                <td class="test-timestamp">2025-10-28T16:16:15.406557</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">8</td>
+                <td class="test-name">test_search_functionality</td>
+                <td class="test-suite">Authentication</td>
+                <td class="test-category">security</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">7.40s</td>
+                <td class="test-timestamp">2025-10-27T04:16:15.406565</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">9</td>
+                <td class="test-name">test_user_permissions</td>
+                <td class="test-suite">Search</td>
+                <td class="test-category">security</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">5.91s</td>
+                <td class="test-timestamp">2025-10-28T23:16:15.406572</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">10</td>
+                <td class="test-name">test_error_handling</td>
+                <td class="test-suite">API Integration</td>
+                <td class="test-category">performance</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">10.37s</td>
+                <td class="test-timestamp">2025-10-28T10:16:15.406580</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">11</td>
+                <td class="test-name">test_user_registration</td>
+                <td class="test-suite">Authentication</td>
+                <td class="test-category">security</td>
+                <td class="test-status failed">
+                    <span class="status-icon">❌</span>
+                    FAILED
+                </td>
+                <td class="test-duration">13.12s</td>
+                <td class="test-timestamp">2025-10-28T03:16:15.406588</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">12</td>
+                <td class="test-name">test_search_functionality</td>
+                <td class="test-suite">Authentication</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">8.16s</td>
+                <td class="test-timestamp">2025-10-26T17:16:15.406602</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">13</td>
+                <td class="test-name">test_user_login</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">api</td>
+                <td class="test-status failed">
+                    <span class="status-icon">❌</span>
+                    FAILED
+                </td>
+                <td class="test-duration">24.91s</td>
+                <td class="test-timestamp">2025-10-28T15:16:15.406610</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">14</td>
+                <td class="test-name">test_user_registration</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">integration</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">12.17s</td>
+                <td class="test-timestamp">2025-10-29T09:16:15.406619</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">15</td>
+                <td class="test-name">test_password_reset</td>
+                <td class="test-suite">Search</td>
+                <td class="test-category">security</td>
+                <td class="test-status failed">
+                    <span class="status-icon">❌</span>
+                    FAILED
+                </td>
+                <td class="test-duration">24.46s</td>
+                <td class="test-timestamp">2025-10-29T06:16:15.406627</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">16</td>
+                <td class="test-name">test_payment_processing</td>
+                <td class="test-suite">Search</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">2.23s</td>
+                <td class="test-timestamp">2025-10-29T11:16:15.406635</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">17</td>
+                <td class="test-name">test_data_validation</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">api</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">10.06s</td>
+                <td class="test-timestamp">2025-10-29T07:16:15.406642</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">18</td>
+                <td class="test-name">test_api_endpoint</td>
+                <td class="test-suite">API Integration</td>
+                <td class="test-category">performance</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">0.58s</td>
+                <td class="test-timestamp">2025-10-26T21:16:15.406650</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">19</td>
+                <td class="test-name">test_email_notification</td>
+                <td class="test-suite">User Management</td>
+                <td class="test-category">functional</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">14.80s</td>
+                <td class="test-timestamp">2025-10-28T00:16:15.406658</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">20</td>
+                <td class="test-name">test_data_encryption</td>
+                <td class="test-suite">User Management</td>
+                <td class="test-category">functional</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">5.25s</td>
+                <td class="test-timestamp">2025-10-27T11:16:15.406665</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">21</td>
+                <td class="test-name">test_data_validation</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">api</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">6.22s</td>
+                <td class="test-timestamp">2025-10-26T17:16:15.406672</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">22</td>
+                <td class="test-name">test_payment_processing</td>
+                <td class="test-suite">Search</td>
+                <td class="test-category">security</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">0.87s</td>
+                <td class="test-timestamp">2025-10-28T23:16:15.406681</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">23</td>
+                <td class="test-name">test_error_handling</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">security</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">9.25s</td>
+                <td class="test-timestamp">2025-10-27T06:16:15.406688</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">24</td>
+                <td class="test-name">test_database_connectivity</td>
+                <td class="test-suite">User Management</td>
+                <td class="test-category">performance</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">1.06s</td>
+                <td class="test-timestamp">2025-10-27T10:16:15.406695</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">25</td>
+                <td class="test-name">test_user_registration</td>
+                <td class="test-suite">User Management</td>
+                <td class="test-category">functional</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">5.77s</td>
+                <td class="test-timestamp">2025-10-28T07:16:15.406702</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">26</td>
+                <td class="test-name">test_data_validation</td>
+                <td class="test-suite">Search</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">7.60s</td>
+                <td class="test-timestamp">2025-10-27T06:16:15.406710</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">27</td>
+                <td class="test-name">test_ui_responsiveness</td>
+                <td class="test-suite">Authentication</td>
+                <td class="test-category">integration</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">6.66s</td>
+                <td class="test-timestamp">2025-10-28T21:16:15.406717</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">28</td>
+                <td class="test-name">test_user_permissions</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">performance</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">4.32s</td>
+                <td class="test-timestamp">2025-10-29T10:16:15.406725</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">29</td>
+                <td class="test-name">test_email_notification</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">11.54s</td>
+                <td class="test-timestamp">2025-10-27T18:16:15.406732</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">30</td>
+                <td class="test-name">test_user_permissions</td>
+                <td class="test-suite">Search</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">12.94s</td>
+                <td class="test-timestamp">2025-10-27T17:16:15.406740</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">31</td>
+                <td class="test-name">test_data_validation</td>
+                <td class="test-suite">API Integration</td>
+                <td class="test-category">integration</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">1.47s</td>
+                <td class="test-timestamp">2025-10-28T23:16:15.406747</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">32</td>
+                <td class="test-name">test_user_permissions</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">3.48s</td>
+                <td class="test-timestamp">2025-10-27T09:16:15.406755</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">33</td>
+                <td class="test-name">test_password_reset</td>
+                <td class="test-suite">User Management</td>
+                <td class="test-category">api</td>
+                <td class="test-status failed">
+                    <span class="status-icon">❌</span>
+                    FAILED
+                </td>
+                <td class="test-duration">6.47s</td>
+                <td class="test-timestamp">2025-10-27T21:16:15.406762</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">34</td>
+                <td class="test-name">test_error_handling</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">functional</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">13.83s</td>
+                <td class="test-timestamp">2025-10-28T06:16:15.406770</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">35</td>
+                <td class="test-name">test_user_registration</td>
+                <td class="test-suite">Search</td>
+                <td class="test-category">performance</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">12.82s</td>
+                <td class="test-timestamp">2025-10-28T13:16:15.406777</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">36</td>
+                <td class="test-name">test_search_functionality</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">performance</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">4.21s</td>
+                <td class="test-timestamp">2025-10-28T04:16:15.406785</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">37</td>
+                <td class="test-name">test_data_validation</td>
+                <td class="test-suite">API Integration</td>
+                <td class="test-category">api</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">1.38s</td>
+                <td class="test-timestamp">2025-10-28T04:16:15.406793</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">38</td>
+                <td class="test-name">test_user_permissions</td>
+                <td class="test-suite">Authentication</td>
+                <td class="test-category">functional</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">12.36s</td>
+                <td class="test-timestamp">2025-10-28T22:16:15.406800</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">39</td>
+                <td class="test-name">test_api_endpoint</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">performance</td>
+                <td class="test-status failed">
+                    <span class="status-icon">❌</span>
+                    FAILED
+                </td>
+                <td class="test-duration">22.58s</td>
+                <td class="test-timestamp">2025-10-28T10:16:15.406808</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">40</td>
+                <td class="test-name">test_error_handling</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">security</td>
+                <td class="test-status skipped">
+                    <span class="status-icon">⏭️</span>
+                    SKIPPED
+                </td>
+                <td class="test-duration">0.11s</td>
+                <td class="test-timestamp">2025-10-27T13:16:15.406816</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">41</td>
+                <td class="test-name">test_data_validation</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">api</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">6.08s</td>
+                <td class="test-timestamp">2025-10-28T22:16:15.406824</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">42</td>
+                <td class="test-name">test_api_endpoint</td>
+                <td class="test-suite">User Management</td>
+                <td class="test-category">api</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">13.16s</td>
+                <td class="test-timestamp">2025-10-29T00:16:15.406833</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">43</td>
+                <td class="test-name">test_ui_responsiveness</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">performance</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">1.23s</td>
+                <td class="test-timestamp">2025-10-28T14:16:15.406841</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">44</td>
+                <td class="test-name">test_ui_responsiveness</td>
+                <td class="test-suite">Search</td>
+                <td class="test-category">integration</td>
+                <td class="test-status skipped">
+                    <span class="status-icon">⏭️</span>
+                    SKIPPED
+                </td>
+                <td class="test-duration">3.42s</td>
+                <td class="test-timestamp">2025-10-28T18:16:15.406850</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">45</td>
+                <td class="test-name">test_error_handling</td>
+                <td class="test-suite">Authentication</td>
+                <td class="test-category">performance</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">11.91s</td>
+                <td class="test-timestamp">2025-10-26T17:16:15.406858</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">46</td>
+                <td class="test-name">test_database_connectivity</td>
+                <td class="test-suite">Payment</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">6.22s</td>
+                <td class="test-timestamp">2025-10-29T04:16:15.406866</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">47</td>
+                <td class="test-name">test_database_connectivity</td>
+                <td class="test-suite">User Management</td>
+                <td class="test-category">functional</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">2.42s</td>
+                <td class="test-timestamp">2025-10-27T17:16:15.406874</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">48</td>
+                <td class="test-name">test_user_login</td>
+                <td class="test-suite">API Integration</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">4.58s</td>
+                <td class="test-timestamp">2025-10-27T15:16:15.406881</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">49</td>
+                <td class="test-name">test_data_encryption</td>
+                <td class="test-suite">API Integration</td>
+                <td class="test-category">api</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">6.68s</td>
+                <td class="test-timestamp">2025-10-28T21:16:15.406888</td>
+            </tr>
+            
+            <tr class="test-row">
+                <td class="test-number">50</td>
+                <td class="test-name">test_data_validation</td>
+                <td class="test-suite">User Management</td>
+                <td class="test-category">ui</td>
+                <td class="test-status passed">
+                    <span class="status-icon">✅</span>
+                    PASSED
+                </td>
+                <td class="test-duration">7.11s</td>
+                <td class="test-timestamp">2025-10-28T00:16:15.406895</td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Simple Testing Framework - Reporting Module</p>
+            <p>Report ID: 20251029_171615</p>
+        </div>
+    </div>
+    
+    <script>
+        // Simple chart visualization
+        const canvas = document.getElementById('resultsChart');
+        const ctx = canvas.getContext('2d');
+        
+        const passed = 41;
+        const failed = 6;
+        const skipped = 3;
+        
+        // Draw simple bar chart
+        ctx.fillStyle = '#28a745';
+        ctx.fillRect(50, 150 - passed * 2, 50, passed * 2);
+        ctx.fillStyle = '#dc3545';
+        ctx.fillRect(150, 150 - failed * 2, 50, failed * 2);
+        ctx.fillStyle = '#ffc107';
+        ctx.fillRect(250, 150 - skipped * 2, 50, skipped * 2);
+        
+        // Labels
+        ctx.fillStyle = '#333';
+        ctx.font = '12px Arial';
+        ctx.fillText('Passed', 55, 170);
+        ctx.fillText('Failed', 155, 170);
+        ctx.fillText('Skipped', 245, 170);
+        
+        // Values
+        ctx.font = 'bold 14px Arial';
+        ctx.fillText(passed.toString(), 70, 145 - passed * 2);
+        ctx.fillText(failed.toString(), 170, 145 - failed * 2);
+        ctx.fillText(skipped.toString(), 270, 145 - skipped * 2);
+    </script>
+</body>
+</html>
+        

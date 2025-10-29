@@ -1,0 +1,173 @@
+{
+  "users": {
+    "valid": {
+      "email": "test@example.com",
+      "password": "password123",
+      "firstName": "Test",
+      "lastName": "User"
+    },
+    "admin": {
+      "email": "admin@example.com",
+      "password": "admin123",
+      "firstName": "Admin",
+      "lastName": "User",
+      "role": "admin"
+    },
+    "invalid": {
+      "email": "invalid@example.com",
+      "password": "wrongpassword"
+    }
+  },
+  "products": {
+    "sample": {
+      "name": "Test Product",
+      "description": "A sample product for testing",
+      "price": 99.99,
+      "category": "Electronics",
+      "stock": 100,
+      "sku": "TEST-001",
+      "images": [
+        "https://example.com/image1.jpg",
+        "https://example.com/image2.jpg"
+      ]
+    },
+    "laptop": {
+      "name": "Gaming Laptop",
+      "description": "High-performance gaming laptop",
+      "price": 1299.99,
+      "category": "Computers",
+      "specifications": {
+        "processor": "Intel i7",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "graphics": "NVIDIA RTX 3070"
+      }
+    }
+  },
+  "orders": {
+    "sample": {
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 2,
+          "price": 99.99
+        }
+      ],
+      "shippingAddress": {
+        "street": "123 Test Street",
+        "city": "Test City",
+        "state": "TS",
+        "zipCode": "12345",
+        "country": "USA"
+      },
+      "billingAddress": {
+        "street": "123 Test Street",
+        "city": "Test City",
+        "state": "TS",
+        "zipCode": "12345",
+        "country": "USA"
+      }
+    }
+  },
+  "search": {
+    "queries": [
+      "laptop",
+      "phone",
+      "headphones",
+      "gaming"
+    ],
+    "categories": [
+      "Electronics",
+      "Computers",
+      "Audio",
+      "Gaming"
+    ]
+  },
+  "formData": {
+    "login": {
+      "valid": {
+        "email": "user@example.com",
+        "password": "password123"
+      },
+      "invalid": {
+        "email": "invalid-email",
+        "password": ""
+      }
+    },
+    "registration": {
+      "valid": {
+        "email": "newuser@example.com",
+        "password": "SecurePass123!",
+        "firstName": "New",
+        "lastName": "User",
+        "phone": "+1234567890",
+        "dateOfBirth": "1990-01-01"
+      }
+    }
+  },
+  "mobile": {
+    "viewports": {
+      "mobile": {
+        "width": 375,
+        "height": 667
+      },
+      "tablet": {
+        "width": 768,
+        "height": 1024
+      },
+      "desktop": {
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    "devices": [
+      "iPhone 12",
+      "Pixel 5",
+      "iPad",
+      "Galaxy S21"
+    ]
+  },
+  "api": {
+    "endpoints": {
+      "auth": {
+        "login": "/auth/login",
+        "register": "/auth/register",
+        "logout": "/auth/logout",
+        "refresh": "/auth/refresh"
+      },
+      "products": {
+        "list": "/products",
+        "detail": "/products/{id}",
+        "create": "/products",
+        "update": "/products/{id}",
+        "delete": "/products/{id}"
+      },
+      "users": {
+        "list": "/users",
+        "detail": "/users/{id}",
+        "update": "/users/{id}",
+        "delete": "/users/{id}"
+      },
+      "orders": {
+        "list": "/orders",
+        "detail": "/orders/{id}",
+        "create": "/orders",
+        "update": "/orders/{id}",
+        "cancel": "/orders/{id}/cancel"
+      },
+      "search": {
+        "products": "/search/products",
+        "users": "/search/users"
+      }
+    },
+    "headers": {
+      "contentType": "application/json",
+      "accept": "application/json"
+    },
+    "statusCodes": {
+      "success": [200, 201],
+      "clientError": [400, 401, 403, 404, 409, 422],
+      "serverError": [500, 502, 503]
+    }
+  }
+}
