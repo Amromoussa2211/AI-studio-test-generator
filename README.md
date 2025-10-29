@@ -57,6 +57,262 @@ simple-testing-framework/
    npm run install:browsers
    ```
 
+## 🚀 How to Run
+
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/Amromoussa2211/AI-studio-test-generator.git
+cd AI-studio-test-generator
+```
+
+### Step 2: Install Dependencies
+```bash
+# Install Node.js dependencies
+npm install
+
+# Install Playwright browsers (Chrome, Firefox, Safari)
+npx playwright install
+```
+
+### Step 3: Run Tests
+
+#### Run All Tests
+```bash
+npm test
+```
+
+#### Run Specific Test Suites
+```bash
+# Web tests only
+npm run test:web
+
+# Mobile tests only
+npm run test:mobile
+
+# API tests only
+npm run test:api
+```
+
+#### Run Tests in Different Modes
+```bash
+# Headed mode (see browser window)
+npm run test:headed
+
+# Debug mode (step-by-step debugging)
+npm run test:debug
+
+# View test report
+npm run test:report
+```
+
+### Step 4: View Results
+After running tests, you can view:
+- **HTML Report**: Run `npm run test:report` to open interactive report
+- **Screenshots**: Check `test-results/` folder for failure screenshots
+- **Videos**: Check `test-results/` folder for test recordings
+
+## 🤖 AI Test Generation - Sample Usage
+
+The framework includes an AI-powered test generator that can convert plain text user stories into executable test scripts!
+
+### How to Use AI Test Generation
+
+#### Step 1: Run the AI Generator
+```bash
+npm run ai-generate
+```
+
+#### Step 2: Input Your User Story (Plain Text)
+Enter your test scenario in natural language. Here's an example:
+
+**Input:**
+```
+User Story: Login with valid credentials
+
+As a registered user
+I want to log into the application
+So that I can access my dashboard
+
+Acceptance Criteria:
+- User navigates to login page
+- User enters email: test@example.com
+- User enters password: Test@123
+- User clicks login button
+- User should be redirected to dashboard
+- Dashboard should display welcome message
+```
+
+#### Step 3: Generated Test Code
+The AI will automatically generate a Playwright test:
+
+```typescript
+// Generated Test: Login with valid credentials
+import { test, expect } from '@playwright/test';
+import { LoginPage } from '../page-objects/LoginPage';
+
+test.describe('Login with valid credentials', () => {
+  let loginPage: LoginPage;
+
+  test.beforeEach(async ({ page }) => {
+    loginPage = new LoginPage(page, 'http://localhost:3000');
+    await loginPage.goto();
+  });
+
+  test('should allow user to login with valid credentials', async ({ page }) => {
+    // User enters email
+    await loginPage.fillEmail('test@example.com');
+    
+    // User enters password
+    await loginPage.fillPassword('Test@123');
+    
+    // User clicks login button
+    await loginPage.clickLoginButton();
+    
+    // Verify redirect to dashboard
+    await expect(page).toHaveURL(/.*dashboard/);
+    
+    // Verify welcome message is displayed
+    await expect(page.locator('.welcome-message')).toBeVisible();
+    await expect(page.locator('.welcome-message')).toContainText('Welcome');
+  });
+});
+```
+
+### More AI Generation Examples
+
+#### Example 1: E-commerce Shopping Cart
+**Input:**
+```
+User Story: Add product to shopping cart
+
+As a customer
+I want to add products to my cart
+So that I can purchase them later
+
+Steps:
+1. Navigate to products page
+2. Click on first product
+3. Select quantity: 2
+4. Click "Add to Cart" button
+5. Verify cart icon shows count: 2
+6. Verify success message appears
+```
+
+**Generated Output:**
+```typescript
+test('should add product to shopping cart', async ({ page }) => {
+  const ecommercePage = new EcommercePage(page, baseURL);
+  
+  // Navigate to products page
+  await ecommercePage.goto('/products');
+  
+  // Click on first product
+  await ecommercePage.clickProduct(0);
+  
+  // Select quantity
+  await ecommercePage.selectQuantity(2);
+  
+  // Add to cart
+  await ecommercePage.clickAddToCart();
+  
+  // Verify cart count
+  await expect(page.locator('.cart-count')).toHaveText('2');
+  
+  // Verify success message
+  await expect(page.locator('.success-message')).toBeVisible();
+});
+```
+
+#### Example 2: API Testing
+**Input:**
+```
+API Test: Create new user via API
+
+Test Scenario:
+- Send POST request to /api/users
+- Body: { "name": "John Doe", "email": "john@example.com", "role": "user" }
+- Verify response status is 201
+- Verify response contains user ID
+- Verify email matches request
+```
+
+**Generated Output:**
+```typescript
+test('should create new user via API', async ({ request }) => {
+  const newUser = {
+    name: 'John Doe',
+    email: 'john@example.com',
+    role: 'user'
+  };
+  
+  const response = await request.post('/api/users', {
+    data: newUser
+  });
+  
+  expect(response.status()).toBe(201);
+  
+  const userData = await response.json();
+  expect(userData).toHaveProperty('id');
+  expect(userData.email).toBe(newUser.email);
+});
+```
+
+#### Example 3: Mobile Testing
+**Input:**
+```
+Mobile Test: Hamburger menu navigation
+
+Device: iPhone 12
+Steps:
+1. Open homepage on mobile
+2. Tap hamburger menu icon
+3. Verify menu slides in from left
+4. Tap "Products" link
+5. Verify navigation to products page
+```
+
+**Generated Output:**
+```typescript
+test('should navigate using hamburger menu on mobile', async ({ browser }) => {
+  const context = await browser.newContext({
+    ...devices['iPhone 12']
+  });
+  const page = await context.newPage();
+  
+  await page.goto('/');
+  
+  // Tap hamburger menu
+  await page.tap('.hamburger-menu');
+  
+  // Verify menu visible
+  await expect(page.locator('.mobile-menu')).toBeVisible();
+  
+  // Tap Products link
+  await page.tap('text=Products');
+  
+  // Verify navigation
+  await expect(page).toHaveURL(/.*products/);
+  
+  await context.close();
+});
+```
+
+### Running AI-Generated Tests
+
+1. **Save the generated code** to a `.spec.ts` file in `src/tests/`
+2. **Run the test:**
+   ```bash
+   npm test -- path/to/your-generated-test.spec.ts
+   ```
+
+### Benefits of AI Test Generation
+
+✅ **Save Time**: Convert user stories to tests in seconds  
+✅ **Consistent Code**: Follow framework patterns automatically  
+✅ **Learn by Example**: Great for new team members  
+✅ **Rapid Prototyping**: Quickly create test skeletons  
+✅ **Best Practices**: Generated code uses page objects and proper assertions
+
 ## 📋 Available Scripts
 
 - `npm test` - Run all tests
@@ -66,6 +322,7 @@ simple-testing-framework/
 - `npm run test:headed` - Run tests in headed mode
 - `npm run test:debug` - Debug tests
 - `npm run test:report` - Show test report
+- `npm run ai-generate` - Generate test cases from user stories (AI-powered)
 
 ## 📝 Usage Examples
 
